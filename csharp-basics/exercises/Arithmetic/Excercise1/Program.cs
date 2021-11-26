@@ -6,10 +6,28 @@ namespace Excercise1
     {
         static void Main(string[] args)
         {
+            int result = 15;
             Console.WriteLine("Enter your first integer:");
-            var firstInt = Console.ReadLine();
+            var firstInt = Int32.Parse(Console.ReadLine());
             Console.WriteLine("Enter your second integer:");
-            var secondInt = Console.ReadLine();
+            var secondInt = Int32.Parse(Console.ReadLine());
+            if (firstInt == result | secondInt == result)
+            {
+                Console.WriteLine(true);
+            }
+            else if (firstInt + secondInt == result)
+            {
+                Console.WriteLine(true);
+            }
+            else if (firstInt - secondInt == result)
+            {
+                Console.WriteLine(true);
+            }
+            else
+            {
+                Console.WriteLine(false);
+            }
+
         }
     }
 }
