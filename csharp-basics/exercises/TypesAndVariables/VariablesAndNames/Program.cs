@@ -16,7 +16,7 @@ namespace VariablesAndNames
             carsNotDriven = cars - drivers;  // free cars
             carsDriven = drivers; // cars driven at the moment
             carpoolCapacity = drivers * seatsInACar; // carpool capacity
-            averagePassengersPerCar = ((carpoolCapacity - passengers) + passengers - (passengers % carsDriven)) / carsDriven; // average passengers per car
+            averagePassengersPerCar = Math.Round((double) passengers / drivers, 2); // average passengers per car
 
             Console.WriteLine("There are " + cars + " cars available.");
             Console.WriteLine("There are only " + drivers + " drivers available.");
