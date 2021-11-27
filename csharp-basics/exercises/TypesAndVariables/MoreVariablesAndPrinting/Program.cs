@@ -29,7 +29,7 @@ namespace MoreVariablesAndPrinting
 
             Console.WriteLine("If I add " + age + ", " + height + ", and " + weight
                                + " I get " + (age + height + weight) + ".");
-
+             
             Console.ReadKey();
         }
     }
