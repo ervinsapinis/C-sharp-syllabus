@@ -11,7 +11,6 @@ namespace SadFor
 
         private static void Test1()
         {
-            //fixme so I would compile
             int i;
             for (i = 0; i < 10; i++)
             {
@@ -20,7 +19,6 @@ namespace SadFor
                     Console.WriteLine(i);
                 }
             }
-            
         }
     }
 }
