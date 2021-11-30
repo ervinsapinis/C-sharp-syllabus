@@ -15,6 +15,7 @@ namespace LargestNumber
 
             Console.WriteLine("Input the 3rd number: ");
             var input3 = Console.ReadLine();
+            int test;
         
             /*
             todo - expected output:
