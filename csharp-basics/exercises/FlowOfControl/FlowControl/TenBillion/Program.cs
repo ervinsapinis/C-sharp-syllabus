@@ -11,69 +11,32 @@ namespace TenBillion
 
             var input = Console.ReadLine();
 
-            /*
-            todo - check if Long
-            if (?) 
-            {
-                //todo - check if n is less than zero
-                if (?) 
-                {
-                    n *= -1;
-                }
+            int digits = input.Length;
 
-                fixme
-                if (?) 
-                {
-                    Console.WriteLine("Number is greater or equals 10,000,000,000!");
-                } 
-                else 
-                {
-                    int digits = 1;
-                    if (?) 
-                    {
-                        digits = 2;
-                    } 
-                    else if (?) 
-                    {
-                        digits = 3;
-                    } 
-                    else if (?) 
-                    {
-                        digits = 4;
-                    } 
-                    else if (?) 
-                    {
-                        digits = 5;
-                    } 
-                    else if (?) 
-                    {
-                        digits = 6;
-                    } 
-                    else if (?) 
-                    {
-                        digits = 7;
-                    } 
-                    else if (?) 
-                    {
-                        digits = 8;
-                    } 
-                    else if (?) 
-                    {
-                        digits = 9;
-                    } 
-                    else if (?) 
-                    {
-                        digits = 10;
-                    }
-
-                    Console.WriteLine("Number of digits in the number: " + digits);
-                }
-            } 
-            else 
+            if (input[0] == '-')
             {
-                Console.WriteLine("The number is not a long");
+                digits--;
             }
-            */
+
+            long n = long.Parse(input);
+            
+            if (n < 0)
+            {
+                n *= -1;
+            }
+
+            // todo - check if Long
+            if (n >= 10000000000)
+            {
+                Console.WriteLine("Number is greater or equals 10,000,000,000!");
+            }
+            else
+            {
+                Console.WriteLine("Number of digits in the number: " + digits);
+            }
+            
+            
+         
         }
     }
 }
