@@ -14,6 +14,7 @@ namespace Exercise8
             TotalPay(basePay, hoursWorked);
             Console.ReadKey();
         }
+
         public static void TotalPay(double basePay, int hoursWorked)
         {
             if (basePay < 8)
@@ -28,7 +29,8 @@ namespace Exercise8
             {
                 double total = (((hoursWorked - 40) * 1.5) + 40) * basePay;
                 Console.WriteLine("Your total pay is: $" + total);
-            } else
+            } 
+            else
             {
                double total = hoursWorked * basePay;
                 Console.WriteLine("Your total pay is: $" + total);

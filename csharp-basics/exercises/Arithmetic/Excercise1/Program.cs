@@ -11,15 +11,11 @@ namespace Excercise1
             var firstInt = Int32.Parse(Console.ReadLine());
             Console.WriteLine("Enter your second integer:");
             var secondInt = Int32.Parse(Console.ReadLine());
-            if (firstInt == result | secondInt == result)
-            {
-                Console.WriteLine(true);
-            }
-            else if (firstInt + secondInt == result)
-            {
-                Console.WriteLine(true);
-            }
-            else if (firstInt - secondInt == result)
+            if (firstInt == result |
+                secondInt == result |
+                firstInt - secondInt == result |
+                firstInt - secondInt == result |
+                firstInt + secondInt == result)
             {
                 Console.WriteLine(true);
             }
