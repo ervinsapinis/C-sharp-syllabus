@@ -34,9 +34,6 @@ namespace TenBillion
             {
                 Console.WriteLine("Number of digits in the number: " + digits);
             }
-            
-            
-         
         }
     }
 }

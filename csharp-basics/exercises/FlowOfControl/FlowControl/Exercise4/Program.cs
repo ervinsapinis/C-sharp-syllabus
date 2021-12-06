@@ -33,11 +33,11 @@ namespace Exercise4
                 }
                 if (userInput == 5)
                 {
-                    Console.WriteLine("Saturday");
+                    Console.WriteLine("Friday");
                 }
                 if (userInput == 6)
                 {
-                    Console.WriteLine("Sunday");
+                    Console.WriteLine("Saturday");
                 }
             }
             else

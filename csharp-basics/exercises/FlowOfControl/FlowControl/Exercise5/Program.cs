@@ -13,7 +13,6 @@ namespace Exercise5
             {
                 PhoneKeyPad(c);
             }
-
         }
 
         static void PhoneKeyPad(char input)
@@ -59,6 +58,5 @@ namespace Exercise5
 
             }
         }
-
     }
 }

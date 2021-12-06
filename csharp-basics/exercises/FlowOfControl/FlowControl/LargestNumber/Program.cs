@@ -20,14 +20,7 @@ namespace LargestNumber
             max1 = Math.Max(input1, input2);
             max2 = Math.Max(input1, input3);
 
-            if (max1 > max2)
-            {
-                Console.WriteLine($"The largest number is: {max1}");
-            }
-            else
-            {
-                Console.WriteLine($"The largest number is: {max2}");
-            }
+            Console.WriteLine(max1 > max2 ? $"The largest number is: {max1}" : $"The largest number is: {max2}");
         }
     }
 }
