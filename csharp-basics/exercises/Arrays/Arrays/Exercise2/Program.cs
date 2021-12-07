@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Exercise2
 {
@@ -14,13 +15,17 @@ namespace Exercise2
             int minNumber = int.Parse(Console.ReadLine());
             Console.WriteLine("Please enter a max number");
             int maxNumber = int.Parse(Console.ReadLine());
+            int arrLength = maxNumber - minNumber;
+            int[] arr = new int[arrLength];
+            int minElement = minNumber;
 
-            /*
-            fixme
-            for (........) {
-            ........
+            for (int i = 0; i < arrLength; i++) // es nesaprotu, kādēļ liekot i <= arrLength man met errorus arā pie palaišanas. tādēļ arī summa tāda.
+            {
+                arr[i] = minElement;
+                minElement++;
             }
-            */
+
+            sum = arr.Sum() + maxNumber;
 
             Console.WriteLine("The sum is " + sum);
             Console.ReadKey();
