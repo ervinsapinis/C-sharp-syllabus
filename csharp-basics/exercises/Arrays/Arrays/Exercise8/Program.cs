@@ -88,9 +88,5 @@ namespace Exercise8
         {
             return word.ToLower().IndexOf(guess) > -1;
         }
-
-        private static void Game()
-        {}
-
     }
 }
