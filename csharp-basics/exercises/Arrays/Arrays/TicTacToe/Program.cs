@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 
 namespace TicTacToe
 {
@@ -6,11 +7,102 @@ namespace TicTacToe
     {
         private static char[,] board = new char[3, 3];
 
+
         private static void Main(string[] args)
         {
+            int playerTurn = 1;
+            char playerSymbol = 'X';
             InitBoard();
-            DisplayBoard();
+            bool gameIsRunning = true;
+
+            while (gameIsRunning)
+            {
+                Console.Clear();
+                DisplayBoard();
+                Console.Write($"{playerSymbol}, choose your location (row, column): ");
+                var playerInputRow = int.Parse(Console.ReadKey().KeyChar.ToString());
+                var playerInputColumn = int.Parse(Console.ReadKey().KeyChar.ToString());
+                Console.WriteLine();
+                board[playerInputRow, playerInputColumn] = playerSymbol;
+                Console.Clear();
+                DisplayBoard();
+
+                if (playerTurn == 9)
+                {
+                    Console.Clear();
+                    DisplayBoard();
+                    Console.WriteLine("It's a tie.");
+                    break;
+                }   
+
+                if (playerSymbol == board[0, 0] && playerSymbol == board[0, 1] && playerSymbol == board[0, 2])
+                {
+                    Console.Clear();
+                    DisplayBoard();
+                    WinMessage(playerSymbol);
+                    break;
+                }
+                else if (playerSymbol == board[1, 0] && playerSymbol == board[1, 1] && playerSymbol == board[1, 2])
+                {
+                    Console.Clear();
+                    DisplayBoard();
+                    WinMessage(playerSymbol);
+                    break;
+                }
+                else if (playerSymbol == board[2, 0] && playerSymbol == board[2, 1] && playerSymbol == board[2, 2])
+                {
+                    Console.Clear();
+                    DisplayBoard();
+                    WinMessage(playerSymbol);
+                    break;
+                }
+                else if (playerSymbol == board[0, 0] && playerSymbol == board[1, 0] && playerSymbol == board[2, 0])
+                {
+                    Console.Clear();
+                    DisplayBoard();
+                    WinMessage(playerSymbol);
+                    break;
+                }
+                else if (playerSymbol == board[0, 1] && playerSymbol == board[1, 1] && playerSymbol == board[2, 1])
+                {
+                    Console.Clear();
+                    DisplayBoard();
+                    WinMessage(playerSymbol);
+                    break;
+                }
+                else if (playerSymbol == board[0, 2] && playerSymbol == board[1, 2] && playerSymbol == board[2, 2])
+                {
+                    Console.Clear();
+                    DisplayBoard();
+                    WinMessage(playerSymbol);
+                    break;
+                }
+                else if (playerSymbol == board[0, 0] && playerSymbol == board[1, 1] && playerSymbol == board[2, 2])
+                {
+                    Console.Clear();
+                    DisplayBoard();
+                    WinMessage(playerSymbol);
+                    break;
+                }
+                else if (playerSymbol == board[0, 2] && playerSymbol == board[1, 1] && playerSymbol == board[2, 0])
+                {
+                    Console.Clear();
+                    DisplayBoard();
+                    WinMessage(playerSymbol);
+                    break;
+                }
+
+                playerTurn++;
+                playerSymbol = playerTurn % 2 == 0 ? 'O' : 'X';
+            }
+
         }
+
+        public static void WinMessage(char playerSymbol)
+        {
+            Console.WriteLine($"Congratulations {playerSymbol}, you have won the game.");
+        }
+
 
         private static void InitBoard()
         {
