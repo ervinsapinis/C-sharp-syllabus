@@ -15,26 +15,45 @@ namespace Exercise3
                 arr[i] = rand;
             }
 
-            Console.WriteLine("Please input an index of the array. 1 - 20");
+            Console.Write("Array: ");
+            foreach (var num in arr)
+            {
+                Console.Write($"{num} ");
+            }
+            Console.WriteLine();
+            Console.WriteLine("Please select an integer from the array to find its index.");
 
             bool isBool;
+            bool check = true;
             string input;
             int inputInt;
             input = Console.ReadLine();
             isBool = int.TryParse(input, out inputInt);
+            check = Array.Exists(arr, x => x == inputInt);
+
             while (!isBool)
             {
                 Console.WriteLine("Please input an integer.");
                 input = Console.ReadLine();
                 isBool = int.TryParse(input, out inputInt);
-                while (inputInt > 20 || inputInt < 0)
+                if (check)
                 {
-                    Console.WriteLine("Please input an integer: 1 - 20");
-                    input = Console.ReadLine();
-                    isBool = int.TryParse(input, out inputInt);
+                    break;
+                }
+                else
+                {
+                    while (!check)
+                    {
+                        Console.WriteLine("Invalid input. Please select an integer from the array.");
+                        input = Console.ReadLine();
+                        isBool = int.TryParse(input, out inputInt);
+                        check = Array.Exists(arr, x => x == inputInt);
+                    }
                 }
             }
 
+            int index = Array.IndexOf(arr, inputInt);
+            Console.WriteLine($"The index of {inputInt} is {index}");
         }
     }
 }
