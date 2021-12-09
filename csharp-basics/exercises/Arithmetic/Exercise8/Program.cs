@@ -33,7 +33,7 @@ namespace Exercise8
             else
             {
                double total = hoursWorked * basePay;
-                Console.WriteLine("Your total pay is: $" + total);
+               Console.WriteLine("Your total pay is: $" + total);
             }
         }
     }

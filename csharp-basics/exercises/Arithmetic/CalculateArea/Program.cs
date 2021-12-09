@@ -17,7 +17,7 @@ namespace CalculateArea
         public static int GetMenu()
         {
 
-            int userChoice ;
+            int userChoice;
             
 
             // Display the menu.
@@ -89,8 +89,6 @@ namespace CalculateArea
         {
             double ground;
             double height;
-
-            // Get input from user
 
             // Get the base
             Console.WriteLine("Enter length of the triangle's base? ");

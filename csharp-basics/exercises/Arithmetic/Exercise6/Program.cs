@@ -10,7 +10,12 @@ namespace Exercise6
 
             for (int i = 1; i <= 110; i++)
             {
-                if (i % 11 == 0)
+                if (i % 11 == 0 && i % 3 == 0)
+                {
+                    Console.Write("Coza ");
+                    Console.WriteLine();
+                }
+                else if (i % 11 == 0)
                 {
                     Console.Write(i);
                     Console.WriteLine();

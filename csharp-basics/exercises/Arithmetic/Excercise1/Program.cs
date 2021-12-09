@@ -14,7 +14,6 @@ namespace Excercise1
             if (firstInt == result |
                 secondInt == result |
                 firstInt - secondInt == result |
-                firstInt - secondInt == result |
                 firstInt + secondInt == result)
             {
                 Console.WriteLine(true);
@@ -23,7 +22,6 @@ namespace Excercise1
             {
                 Console.WriteLine(false);
             }
-
         }
     }
 }
