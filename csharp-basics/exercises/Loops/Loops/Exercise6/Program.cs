@@ -9,6 +9,5 @@ namespace Exercise6
         {
             FizzBuzz.Game();
         }
-
     }
 }

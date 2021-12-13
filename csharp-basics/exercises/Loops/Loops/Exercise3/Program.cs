@@ -23,19 +23,19 @@ namespace Exercise3
             Console.WriteLine();
             Console.WriteLine("Please select an integer from the array to find its index.");
 
-            bool isBool;
-            bool check = true;
+            bool isInt;
+            bool check;
             string input;
             int inputInt;
             input = Console.ReadLine();
-            isBool = int.TryParse(input, out inputInt);
+            isInt = int.TryParse(input, out inputInt);
             check = Array.Exists(arr, x => x == inputInt);
 
-            while (!isBool)
+            while (!isInt)
             {
                 Console.WriteLine("Please input an integer.");
                 input = Console.ReadLine();
-                isBool = int.TryParse(input, out inputInt);
+                isInt = int.TryParse(input, out inputInt);
                 if (check)
                 {
                     break;
@@ -46,7 +46,7 @@ namespace Exercise3
                     {
                         Console.WriteLine("Invalid input. Please select an integer from the array.");
                         input = Console.ReadLine();
-                        isBool = int.TryParse(input, out inputInt);
+                        isInt = int.TryParse(input, out inputInt);
                         check = Array.Exists(arr, x => x == inputInt);
                     }
                 }

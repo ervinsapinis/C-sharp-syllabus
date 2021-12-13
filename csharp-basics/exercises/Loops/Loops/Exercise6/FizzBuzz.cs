@@ -12,17 +12,17 @@ namespace Exercise6
         {
             string input;
             int inputInt;
-            bool isBool;
+            bool isInt;
 
             Console.WriteLine("Max value?");
             input = Console.ReadLine();
-            isBool = int.TryParse(input, out inputInt);
+            isInt = int.TryParse(input, out inputInt);
 
-            while (!isBool)
+            while (!isInt)
             {
                 Console.WriteLine("Please input an integer.");
                 input = Console.ReadLine();
-                isBool = int.TryParse(input, out inputInt);
+                isInt = int.TryParse(input, out inputInt);
             }
 
             for (int i = 1; i <= inputInt; i++)
@@ -55,6 +55,7 @@ namespace Exercise6
         {
             Console.Write("Fizz ");
         }
+
         static void Buzz()
         {
             Console.Write("Buzz ");

@@ -8,6 +8,5 @@ namespace Exercise7
         {
             Piglet.Game();
         }
-        
     }
 }
