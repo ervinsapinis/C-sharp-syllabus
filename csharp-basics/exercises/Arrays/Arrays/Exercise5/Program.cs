@@ -18,11 +18,6 @@ namespace Exercise5
 
             Console.WriteLine("Index position of 36 is: " + indexOfElement36);
             Console.WriteLine("Index position of 29 is: " + indexOfElement29);
-            
-            //Expected output:
-            //Index position of 36 is: 4
-            //Index position of 29 is: 8
-            
         }
     }
 }

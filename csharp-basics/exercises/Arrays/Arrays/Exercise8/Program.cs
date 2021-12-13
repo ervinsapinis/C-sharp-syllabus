@@ -32,8 +32,7 @@ namespace Exercise8
                 Console.WriteLine();
                 Console.Write($"Guess: {guess}");
 
-
-                if (WordContains(word, guess))
+                if (DoesContainLetter(word, guess))
                 {
                     for (int i = 0; i < word.Length; i++)
                     {
@@ -67,7 +66,6 @@ namespace Exercise8
             Console.WriteLine("Play again? Y/N");
             char restartChar = Console.ReadKey().KeyChar;
             Restart(restartChar);
-
         }
 
         private static void Restart(char input)
@@ -84,7 +82,7 @@ namespace Exercise8
             }
         }
 
-        private static bool WordContains(string word, char guess)
+        private static bool DoesContainLetter(string word, char guess)
         {
             return word.ToLower().IndexOf(guess) > -1;
         }

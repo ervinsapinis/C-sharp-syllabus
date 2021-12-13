@@ -103,7 +103,6 @@ namespace TicTacToe
             Console.WriteLine($"Congratulations {playerSymbol}, you have won the game.");
         }
 
-
         private static void InitBoard()
         {
             // fills up the board with blanks
