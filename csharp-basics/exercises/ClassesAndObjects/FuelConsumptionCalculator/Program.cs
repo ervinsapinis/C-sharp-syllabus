@@ -15,8 +15,8 @@ namespace FuelConsumptionCalculator
             
             Console.WriteLine();
 
-            Car car = new Car(0);
-            Car car1 = new Car(0);
+            Car car = new Car(0, 200, 20);
+            Car car1 = new Car(0, 200, 30);
             for (int i = 0; i < 3; i++)
             {
                 Console.Write("Enter first reading: ");
