@@ -46,6 +46,7 @@
         {
             _liters = liters;
             _endKilometers += mileage;
+            _startKilometers = mileage;
         }
     }
 }
