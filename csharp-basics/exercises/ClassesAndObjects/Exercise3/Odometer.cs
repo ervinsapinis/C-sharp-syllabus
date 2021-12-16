@@ -9,16 +9,20 @@ namespace Exercise3
     internal class Odometer
     {
         //fields
+        private int _startingMileage;
         private int _mileage;
+        private int _fuelEconomy = 10;
         private const int MaxMileage = 999999;
+
 
         private FuelGauge _fuelGauge;
 
         //constructor
         public Odometer(int mileage, FuelGauge fuelGauge)
         {
-            this._mileage = mileage;
-            this._fuelGauge = fuelGauge;
+            _startingMileage = mileage;
+            _mileage = mileage;
+            _fuelGauge = fuelGauge;
         }
 
         //properties
@@ -34,17 +38,23 @@ namespace Exercise3
             Console.WriteLine($"Current mileage is {Mileage}");
         }
 
-        public void IncrementMileage()
+        public void Drive()
         {
+            int kmDriven = Mileage - _startingMileage;
+
             if (Mileage < MaxMileage)
+            {
                 Mileage++;
+
+            }
             else
+            {
                 Mileage = 0;
+            }
+
+            if(Mileage % kmDriven == 0)
+                _fuelGauge.UseFuel();
         }
 
-        public void Drive()// stopped at To be able to work with a FuelGauge object. It should decrease the FuelGauge object’s current amount of fuel by 1 liter for every 10 kilometers traveled. (The car’s fuel economy is 10 kilometers per liter.)
-        {
-
-        }
     }
 }
