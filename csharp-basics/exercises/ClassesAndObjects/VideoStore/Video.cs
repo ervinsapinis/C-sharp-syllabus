@@ -10,7 +10,6 @@ namespace VideoStore
         private string _title;
         private bool _isCheckedOut;
         private List<double> _ratings = new List<double>();
-        private int _averageRating;
 
 
         public Video(string title)
@@ -18,8 +17,6 @@ namespace VideoStore
             _title = title;
             _isCheckedOut = false;
             _ratings = new List<double>();
-            _averageRating = 0;
-
         }
 
         public bool IsCheckedOut
@@ -56,12 +53,11 @@ namespace VideoStore
 
         public bool Available()
         {
-            return IsCheckedOut;
+            return !IsCheckedOut;
         }
 
         public string Title
         { get { return _title; } }
-
 
         public override string ToString()
         {
