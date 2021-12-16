@@ -26,7 +26,6 @@ namespace Exercise3
             {
                 if (_fuelInLiters > TankCapacity)
                 {
-                    Console.WriteLine("Tank is full.");
                     _fuelInLiters = 70;
                 }
                 else
@@ -45,14 +44,17 @@ namespace Exercise3
         //methods
         public void FuelReading()
         {
-            Console.WriteLine($"{FuelInLiters}l out of 70l.");
+            if (FuelInLiters == 0)
+                Console.WriteLine("Out of fuel!");
+            else
+                Console.WriteLine($"{FuelInLiters}l out of 70l.");
         }
 
         public void FillUp()
         {
             if (FuelInLiters < TankCapacity)
                 FuelInLiters++;
-            else
+            if(FuelInLiters == TankCapacity)
                 Console.WriteLine("Tank is full.");
         }
 
@@ -60,8 +62,6 @@ namespace Exercise3
         {
             if(FuelInLiters > 0)
                 FuelInLiters--;
-            else
-                Console.WriteLine("Out of fuel!");
         }
     }
 }

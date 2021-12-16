@@ -28,8 +28,14 @@ namespace Exercise3
         //properties
         public int Mileage
         {
-            get;
-            set;
+            get
+            {
+                return _mileage;
+            }
+            set
+            {
+                _mileage =value;
+            }
         }
 
         //methods
@@ -52,7 +58,7 @@ namespace Exercise3
                 Mileage = 0;
             }
 
-            if(Mileage % kmDriven == 0)
+            if(kmDriven % _fuelEconomy == 0)
                 _fuelGauge.UseFuel();
         }
 
