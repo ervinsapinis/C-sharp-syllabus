@@ -10,9 +10,15 @@
         //constructor
         public Car(double startOdo, double endingOdo, double liters)
         {
-            this._startKilometers = startOdo;
-            this._endKilometers = endingOdo;
-            this._liters = liters;
+            _startKilometers = startOdo;
+            _endKilometers = endingOdo;
+            _liters = liters;
+        }
+        public Car(double startOdo)
+        {
+            _startKilometers = startOdo;
+            _endKilometers = _startKilometers;
+            _liters = 0;
         }
 
         //methods
@@ -23,7 +29,7 @@
 
         private double ConsumptionPer100Km()
         {
-            return (_liters * 100) / (_endKilometers - _startKilometers);
+            return (_liters * 100) / _endKilometers;
         }
 
         public bool GasHog()
@@ -38,6 +44,8 @@
 
         public void FillUp(int mileage, double liters)
         {
+            _liters = liters;
+            _endKilometers += mileage;
         }
     }
 }
