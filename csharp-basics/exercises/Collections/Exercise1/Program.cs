@@ -47,7 +47,6 @@ namespace Exercise1
             }
 
             Console.ReadKey();
-
         }
 
         public static string CarCountry(string car)
