@@ -95,6 +95,5 @@ namespace FlightPlanner
             isAppRunning = false;
             Console.ReadKey();
         }
-
     }
 }
