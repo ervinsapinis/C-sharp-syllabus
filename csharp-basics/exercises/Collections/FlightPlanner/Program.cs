@@ -31,14 +31,9 @@ namespace FlightPlanner
             }
 
             if (userInput == validInputs[1])
-            {
                 CloseApp();
-            }
             else
-            {
-                Console.WriteLine("Choose the city you want to start your round trip from:");
                 PrintCities();
-            }
 
             var tempInputCity = Console.ReadLine();
             var firstInputCity = tempInputCity;
@@ -82,6 +77,7 @@ namespace FlightPlanner
 
         public static void PrintCities()
         {
+            Console.WriteLine("Choose the city you want to start your round trip from:");
             foreach (var city in flightDictionary)
             {
                 Console.WriteLine(city.Key);
