@@ -13,7 +13,7 @@ namespace DragRace
 
     public void SpeedUp()
     {
-        currentSpeed+=20;
+        currentSpeed+=28;
     }
 
     public void SlowDown()
