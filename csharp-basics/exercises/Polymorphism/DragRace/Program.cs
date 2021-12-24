@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Channels;
 
 namespace DragRace
 {
@@ -18,7 +21,60 @@ namespace DragRace
 
         private static void Main(string[] args)
         {
-            
+            var carList = new List<ICar>();
+            var results = new List<int>();
+            var audiA4 = new Audi();
+            var zhurka = new Bmw();
+            var roadster = new Tesla();
+            var lexus = new Lexus();
+            var corolla = new Toyota();
+            var w219amg = new Mercedes();
+            carList.Add(audiA4);
+            carList.Add(zhurka);
+            carList.Add(roadster);
+            carList.Add(lexus);
+            carList.Add(corolla);
+            carList.Add(w219amg);
+
+            Console.WriteLine("Gentlemen, start your engines!");
+
+            for (int i = 1; i <= 10; i++)
+            {
+                foreach (var car in carList)
+                {
+                    if (i == 1)
+                    {
+                        car.StartEngine();
+                    }
+                    if (i % 3 == 0)
+                    {
+                        if (car is IBoostable)
+                            ((IBoostable) car).UseNitrousOxideEngine();
+                    }
+                    car.SpeedUp();
+                }
+            }
+
+            for (int i = 0; i < carList.Count; i++)
+            {
+                results.Add(int.Parse(carList[i].ShowCurrentSpeed()));
+            }
+
+            var winner = carList.Find(car => results.Max() == int.Parse(car.ShowCurrentSpeed()));
+
+            Console.WriteLine("ZOOOOM!!!!");
+            Console.WriteLine("WHOOSH!!!!");
+            Console.WriteLine("RRRRRRRRRRRRRRRROOOOOM!!!!");
+            Console.WriteLine("PHEEEEEEW!!!!");
+
+            foreach (var car in carList)
+            {
+                Console.WriteLine($"{car.GetType().Name} finished with a speed of {car.ShowCurrentSpeed()}");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine($"And the winner is {winner.GetType().Name} with a speed of {results.Max()}");
+            Console.ReadKey();
         }
     }
 }
