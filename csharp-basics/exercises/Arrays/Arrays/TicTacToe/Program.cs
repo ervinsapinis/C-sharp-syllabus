@@ -6,14 +6,13 @@ namespace TicTacToe
     class Program
     {
         private static char[,] board = new char[3, 3];
-
+        public static bool gameIsRunning = true;
 
         private static void Main(string[] args)
         {
             int playerTurn = 1;
             char playerSymbol = 'X';
             InitBoard();
-            bool gameIsRunning = true;
 
             while (gameIsRunning)
             {
@@ -37,59 +36,35 @@ namespace TicTacToe
 
                 if (playerSymbol == board[0, 0] && playerSymbol == board[0, 1] && playerSymbol == board[0, 2])
                 {
-                    Console.Clear();
-                    DisplayBoard();
                     WinMessage(playerSymbol);
-                    break;
                 }
                 else if (playerSymbol == board[1, 0] && playerSymbol == board[1, 1] && playerSymbol == board[1, 2])
                 {
-                    Console.Clear();
-                    DisplayBoard();
                     WinMessage(playerSymbol);
-                    break;
                 }
                 else if (playerSymbol == board[2, 0] && playerSymbol == board[2, 1] && playerSymbol == board[2, 2])
                 {
-                    Console.Clear();
-                    DisplayBoard();
                     WinMessage(playerSymbol);
-                    break;
                 }
                 else if (playerSymbol == board[0, 0] && playerSymbol == board[1, 0] && playerSymbol == board[2, 0])
                 {
-                    Console.Clear();
-                    DisplayBoard();
                     WinMessage(playerSymbol);
-                    break;
                 }
                 else if (playerSymbol == board[0, 1] && playerSymbol == board[1, 1] && playerSymbol == board[2, 1])
                 {
-                    Console.Clear();
-                    DisplayBoard();
                     WinMessage(playerSymbol);
-                    break;
                 }
                 else if (playerSymbol == board[0, 2] && playerSymbol == board[1, 2] && playerSymbol == board[2, 2])
                 {
-                    Console.Clear();
-                    DisplayBoard();
                     WinMessage(playerSymbol);
-                    break;
                 }
                 else if (playerSymbol == board[0, 0] && playerSymbol == board[1, 1] && playerSymbol == board[2, 2])
                 {
-                    Console.Clear();
-                    DisplayBoard();
                     WinMessage(playerSymbol);
-                    break;
                 }
                 else if (playerSymbol == board[0, 2] && playerSymbol == board[1, 1] && playerSymbol == board[2, 0])
                 {
-                    Console.Clear();
-                    DisplayBoard();
                     WinMessage(playerSymbol);
-                    break;
                 }
 
                 playerTurn++;
@@ -100,7 +75,12 @@ namespace TicTacToe
 
         public static void WinMessage(char playerSymbol)
         {
+            Console.Clear();
+            DisplayBoard();
             Console.WriteLine($"Congratulations {playerSymbol}, you have won the game.");
+            Console.ReadKey();
+            gameIsRunning = false;
+
         }
 
         private static void InitBoard()
