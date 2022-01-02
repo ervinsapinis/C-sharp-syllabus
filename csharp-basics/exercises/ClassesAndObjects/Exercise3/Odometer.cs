@@ -13,8 +13,6 @@ namespace Exercise3
         private int _mileage;
         private int _fuelEconomy = 10;
         private const int MaxMileage = 999999;
-
-
         private FuelGauge _fuelGauge;
 
         //constructor
@@ -28,14 +26,8 @@ namespace Exercise3
         //properties
         public int Mileage
         {
-            get
-            {
-                return _mileage;
-            }
-            set
-            {
-                _mileage =value;
-            }
+            get => _mileage;
+            set => _mileage = value;
         }
 
         //methods
@@ -49,18 +41,12 @@ namespace Exercise3
             int kmDriven = Mileage - _startingMileage;
 
             if (Mileage < MaxMileage)
-            {
                 Mileage++;
-
-            }
             else
-            {
                 Mileage = 0;
-            }
 
             if(kmDriven % _fuelEconomy == 0)
                 _fuelGauge.UseFuel();
         }
-
     }
 }

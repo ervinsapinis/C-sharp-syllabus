@@ -27,7 +27,6 @@ namespace Exercise3
                 golfOdometer.ReportMileage();
                 golfGauge.FuelReading();
                 Console.WriteLine();
-
             }
         }
     }

@@ -21,7 +21,7 @@ namespace Exercise3
         //properties
         public int FuelInLiters
         {
-            get { return _fuelInLiters; }
+            get => _fuelInLiters;
             set
             {
                 if (_fuelInLiters > TankCapacity)
@@ -38,7 +38,6 @@ namespace Exercise3
         public int TankCapacity
         {
             get {return _tankCapacity; }
-            
         }
 
         //methods
@@ -58,7 +57,7 @@ namespace Exercise3
                 Console.WriteLine("Tank is full.");
         }
 
-            public void UseFuel()
+        public void UseFuel()
         {
             if(FuelInLiters > 0)
                 FuelInLiters--;

@@ -32,26 +32,26 @@ namespace Exercise7
         //properties
         public string Name
         {
-            get { return _name; }
-            set { _name = value; }
+            get => _name;
+            set => _name = value;
         }
 
         public string Sex
         {
-            get { return _sex; }
-            set { _sex = value; }
+            get => _sex;
+            set => _sex = value;
         }
 
         public Dog MotherDog
         {
-            get { return _motherDog;}
-            set { _motherDog = value; }
+            get => _motherDog;
+            set => _motherDog = value;
         }
 
         public Dog FatherDog
         {
-            get { return _fatherDog; }
-            set { _fatherDog = value; }
+            get => _fatherDog;
+            set => _fatherDog = value;
         }
 
         //methods
@@ -65,10 +65,8 @@ namespace Exercise7
 
         public bool HasSameMotherAs(Dog otherDog)
         {
-            if (otherDog.MotherDog == this.MotherDog)
-                return true;
-            else
-                return false;
+            if (otherDog.MotherDog == this.MotherDog) return true;
+            else return false;
         }
     }
 }

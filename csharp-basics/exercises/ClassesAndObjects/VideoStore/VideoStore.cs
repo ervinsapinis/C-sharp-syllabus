@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 
 namespace VideoStore
 {
@@ -14,8 +15,8 @@ namespace VideoStore
 
         public List<Video> FilmList
         {
-            get { return _filmInventory; }
-            set { _filmInventory = value; }
+            get => _filmInventory;
+            set => _filmInventory = value;
         }
 
         public void AddVideo(string title)
@@ -40,18 +41,10 @@ namespace VideoStore
 
         public int FilmListIndex(string title)
         {
-
-            int index = 0;
-            foreach (Video film in FilmList)
-            {
-                if (film.Title == title)
-                    index = FilmList.IndexOf(film);
-            }
-            return index;
-
+            return FilmList.IndexOf(FilmList.First(film => film.Title == title));
         }
 
-            public void ListInventory()
+        public void ListInventory()
         {
             foreach (Video film in FilmList)
             {

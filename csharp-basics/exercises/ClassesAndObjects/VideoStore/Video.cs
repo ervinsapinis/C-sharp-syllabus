@@ -11,7 +11,6 @@ namespace VideoStore
         private bool _isCheckedOut;
         private List<double> _ratings = new List<double>();
 
-
         public Video(string title)
         {
             _title = title;
@@ -21,14 +20,14 @@ namespace VideoStore
 
         public bool IsCheckedOut
         {
-            get { return _isCheckedOut; }
-            set { _isCheckedOut = value; }
+            get => _isCheckedOut;
+            set => _isCheckedOut = value;
         }
 
         public List<double> Ratings
         {
-            get { return _ratings; }
-            set { _ratings = value; }
+            get => _ratings;
+            set => _ratings = value;
         }
 
         public void BeingCheckedOut()

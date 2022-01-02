@@ -24,20 +24,20 @@ namespace Exercise8
 
         public decimal Balance
         {
-            get { return _balance; }
-            private set { _balance = value; }
+            get => _balance;
+            private set => _balance = value;
         }
 
         public decimal MonthlyInterest
         {
-            get { return _monthlyInterest; }
-            private set { _monthlyInterest = value; }
+            get => _monthlyInterest;
+            private set => _monthlyInterest = value;
         }
 
         public decimal InterestEarned
         {
-            get { return _interestEarned; }
-            private set { _interestEarned = value;  }
+            get => _interestEarned;
+            private set => _interestEarned = value;
         }
 
         //methods
@@ -45,15 +45,17 @@ namespace Exercise8
         {
             Balance -= amount;
         }
+
         public void Deposit(decimal amount)
         {
             Balance += amount;
         }
 
-        public void EarnInterest()
+        public decimal EarnInterest()
         {
             InterestEarned = MonthlyInterest * Balance;
             Balance += InterestEarned;
+            return InterestEarned;
         }
 
 

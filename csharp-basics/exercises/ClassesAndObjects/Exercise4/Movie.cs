@@ -31,19 +31,19 @@ namespace Exercise4
         //properties
         public string Title
         {
-            get { return _title; }
-            set { _title = value; }
+            get => _title;
+            set => _title = value;
 
         }
         public string Studio
         {
-            get { return _studio; }
-            set { _studio = value; }
+            get => _studio;
+            set => _studio = value;
         }
         public string Rating
         {
-            get { return _rating; }
-            set { _rating = value; }
+            get => _rating;
+            set => _rating = value;
         }
 
         //methods
