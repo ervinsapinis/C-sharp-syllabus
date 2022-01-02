@@ -34,43 +34,20 @@ namespace TicTacToe
                     break;
                 }   
 
-                if (playerSymbol == board[0, 0] && playerSymbol == board[0, 1] && playerSymbol == board[0, 2])
-                {
+                if (playerSymbol == board[0, 0] && playerSymbol == board[0, 1] && playerSymbol == board[0, 2] ||
+                    playerSymbol == board[1, 0] && playerSymbol == board[1, 1] && playerSymbol == board[1, 2] ||
+                    playerSymbol == board[2, 0] && playerSymbol == board[2, 1] && playerSymbol == board[2, 2] ||
+                    playerSymbol == board[0, 0] && playerSymbol == board[1, 0] && playerSymbol == board[2, 0] ||
+                    playerSymbol == board[0, 0] && playerSymbol == board[1, 0] && playerSymbol == board[2, 0] ||
+                    playerSymbol == board[0, 1] && playerSymbol == board[1, 1] && playerSymbol == board[2, 1] ||
+                    playerSymbol == board[0, 2] && playerSymbol == board[1, 2] && playerSymbol == board[2, 2] ||
+                    playerSymbol == board[0, 0] && playerSymbol == board[1, 1] && playerSymbol == board[2, 2] ||
+                    playerSymbol == board[0, 2] && playerSymbol == board[1, 1] && playerSymbol == board[2, 0])
                     WinMessage(playerSymbol);
-                }
-                else if (playerSymbol == board[1, 0] && playerSymbol == board[1, 1] && playerSymbol == board[1, 2])
-                {
-                    WinMessage(playerSymbol);
-                }
-                else if (playerSymbol == board[2, 0] && playerSymbol == board[2, 1] && playerSymbol == board[2, 2])
-                {
-                    WinMessage(playerSymbol);
-                }
-                else if (playerSymbol == board[0, 0] && playerSymbol == board[1, 0] && playerSymbol == board[2, 0])
-                {
-                    WinMessage(playerSymbol);
-                }
-                else if (playerSymbol == board[0, 1] && playerSymbol == board[1, 1] && playerSymbol == board[2, 1])
-                {
-                    WinMessage(playerSymbol);
-                }
-                else if (playerSymbol == board[0, 2] && playerSymbol == board[1, 2] && playerSymbol == board[2, 2])
-                {
-                    WinMessage(playerSymbol);
-                }
-                else if (playerSymbol == board[0, 0] && playerSymbol == board[1, 1] && playerSymbol == board[2, 2])
-                {
-                    WinMessage(playerSymbol);
-                }
-                else if (playerSymbol == board[0, 2] && playerSymbol == board[1, 1] && playerSymbol == board[2, 0])
-                {
-                    WinMessage(playerSymbol);
-                }
 
                 playerTurn++;
                 playerSymbol = playerTurn % 2 == 0 ? 'O' : 'X';
             }
-
         }
 
         public static void WinMessage(char playerSymbol)
@@ -80,7 +57,6 @@ namespace TicTacToe
             Console.WriteLine($"Congratulations {playerSymbol}, you have won the game.");
             Console.ReadKey();
             gameIsRunning = false;
-
         }
 
         private static void InitBoard()
@@ -91,7 +67,6 @@ namespace TicTacToe
                 for (var c = 0; c < 3; c++)
                     board[r, c] = ' ';
             }
-            
         }
 
         private static void DisplayBoard()
