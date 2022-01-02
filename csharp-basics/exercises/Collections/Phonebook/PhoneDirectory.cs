@@ -35,7 +35,7 @@ namespace PhoneBook
             return "No such name was found in the Phonebook";
         }
 
-        public void AddEntry(string name, string number) //es nezinu, vai te bija japielieto PhoneEntry klase, pagaidam darîts ðâdi.
+        public void AddEntry(string name, string number)
         {
             if (name == null || number == null) 
             {

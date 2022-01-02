@@ -13,7 +13,6 @@ namespace Phonebook
         {
             PhoneDirectory mydiDirectory = new PhoneDirectory();
 
-
             mydiDirectory.AddEntry("Janis Choplin", "654-234-4956");
             mydiDirectory.AddEntry("Humphrey Humphrey", "345-754-3456");
             mydiDirectory.AddEntry("Ahmed Attalay", "764-867-4956");

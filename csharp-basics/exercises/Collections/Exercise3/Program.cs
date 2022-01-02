@@ -10,19 +10,16 @@ namespace Exercise3
     {
         static void Main(string[] args)
         {
-            var namesList = new List<string>();
+            var namesList = new HashSet<string>();
             while (true)
             {
                 Console.Write("Enter name: ");
                 string name = Console.ReadLine();
-                if (name != "")
-                    namesList.Add(name);
-                else
-                    break;
+                if (name != "") namesList.Add(name);
+                else break;
             }
 
-            var uniqueNamesList = namesList.Distinct();
-            Console.WriteLine("Unique name list contains: " + string.Join(" ", uniqueNamesList));
+            Console.WriteLine("Unique name list contains: " + string.Join(" ", namesList));
             Console.ReadKey();
         }
     }

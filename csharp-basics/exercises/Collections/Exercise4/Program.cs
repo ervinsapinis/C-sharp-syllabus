@@ -14,28 +14,20 @@ namespace Exercise4
             Console.WriteLine("Hello! Provide an integer to check if it is happy:");
             var number = int.Parse(Console.ReadLine());
 
-            if (PowerSum(number) == 1)
-                Console.WriteLine(true);
-            else if (PowerSum(number) < 10 && PowerSum(number) != 1)
-                Console.WriteLine(false);
-            else
+            int sum = PowerSum(number);
+            while (true)
             {
-                int sum = PowerSum(number);
-                while (true)
+                if (PowerSum(sum) == 1)
                 {
-                    if (PowerSum(sum) == 1)
-                    {
-                        Console.WriteLine(true);
-                        break;
-                    }
-
-                    if (PowerSum(sum) < 10 && PowerSum(sum) != 1)
-                    {
-                        Console.WriteLine(false);
-                        break;
-                    }
-                    sum = PowerSum(sum);
+                    Console.WriteLine(true);
+                    break;
                 }
+                if (PowerSum(sum) < 10 && PowerSum(sum) != 1)
+                {
+                    Console.WriteLine(false);
+                    break;
+                }
+                sum = PowerSum(sum);
             }
             Console.ReadKey();
         }
