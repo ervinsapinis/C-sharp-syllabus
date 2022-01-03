@@ -37,7 +37,7 @@ namespace Exercise8
         public decimal InterestEarned
         {
             get => _interestEarned;
-            private set => _interestEarned = value;
+            set => _interestEarned = value;
         }
 
         //methods
@@ -53,7 +53,7 @@ namespace Exercise8
 
         public decimal EarnInterest()
         {
-            InterestEarned = MonthlyInterest * Balance;
+            _interestEarned = MonthlyInterest * Balance;
             Balance += InterestEarned;
             return InterestEarned;
         }

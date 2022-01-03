@@ -38,7 +38,7 @@ namespace Exercise3
 
         public void Drive()
         {
-            int kmDriven = Mileage - _startingMileage;
+            int kmDriven = _mileage - _startingMileage;
 
             if (Mileage < MaxMileage)
                 Mileage++;

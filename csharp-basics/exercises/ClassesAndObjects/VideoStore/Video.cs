@@ -32,12 +32,12 @@ namespace VideoStore
 
         public void BeingCheckedOut()
         {
-            IsCheckedOut = true;
+            _isCheckedOut = true;
         }
 
         public void BeingReturned()
         {
-            IsCheckedOut = false;
+            _isCheckedOut = false;
         }
 
         public void ReceivingRating(double rating)
