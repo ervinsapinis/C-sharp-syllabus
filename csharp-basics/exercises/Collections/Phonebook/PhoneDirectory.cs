@@ -1,65 +1,47 @@
 using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Linq;
 
 namespace PhoneBook
 {
     public class PhoneDirectory
     {
-        private PhoneEntry[] _data;
-        private int _dataCount;
+        public SortedDictionary<string, string> PhoneEntryDictionary = new SortedDictionary<string, string>();
 
-        public PhoneDirectory() {
-            _data = new PhoneEntry[1];
-            _dataCount = 0;
-        }
-
-        private int Find(string name) {
-            for (var i = 0; i < _dataCount; i++) 
+        public string Find(string number)
+        {
+            for (int i = 0; i < PhoneEntryDictionary.Count; i++)
             {
-                if (_data[i].name.Equals(name)) 
+                if (PhoneEntryDictionary.ContainsValue(number))
                 {
-                    return i;
+                    var index = PhoneEntryDictionary[number];
+                    return $"The number {number} is under the name {index}";
                 }
             }
-
-            return -1;
+            return "No such number was found in the Phonebook";
         }
 
-        public string GetNumber(string name) 
+        public string GetNumber(string name)
         {
-            var position = Find(name);
-            if (position == -1) 
+            for (int i = 0; i < PhoneEntryDictionary.Count; i++)
             {
-                return null;
-            } 
-            else 
-            {
-                return _data[position].number;
+                if (PhoneEntryDictionary.ContainsValue(name))
+                {
+                    var index = PhoneEntryDictionary[name];
+                    return $"The name {name} is under the Phonebook entry {index}";
+                }
             }
+            return "No such name was found in the Phonebook";
         }
 
-        public void PutNumber(string name, string number) 
+        public void AddEntry(string name, string number)
         {
             if (name == null || number == null) 
             {
                 throw new Exception("name and number cannot be null");
             }
-
-            var i = Find(name);
-            if (i >= 0) 
-            {
-                _data[i].number = number;
-            }
-            else 
-            {
-                if (_dataCount == _data.Length) 
-                {
-                    Array.Resize(ref _data, (2 * _data.Length));
-                }
-
-                var newEntry = new PhoneEntry {name = name, number = number}; // Create a new pair.
-                _data[_dataCount] = newEntry;   // Add the new pair to the array.
-                _dataCount++;
-            }
+            PhoneEntryDictionary.Add(name, number);
         }
     }
 }
