@@ -43,24 +43,20 @@ namespace DragRace
                 foreach (var car in carList)
                 {
                     if (i == 1)
-                    {
                         car.StartEngine();
-                    }
-                    if (i % 3 == 0)
-                    {
+                    else if (i % 3 == 0)
                         if (car is IBoostable)
                             ((IBoostable) car).UseNitrousOxideEngine();
-                    }
                     car.SpeedUp();
                 }
             }
 
             for (int i = 0; i < carList.Count; i++)
             {
-                results.Add(int.Parse(carList[i].ShowCurrentSpeed()));
+                results.Add(int.Parse(carList[i].Show_currentSpeed()));
             }
 
-            var winner = carList.Find(car => results.Max() == int.Parse(car.ShowCurrentSpeed()));
+            var winner = carList.Find(car => results.Max() == int.Parse(car.Show_currentSpeed()));
 
             Console.WriteLine("ZOOOOM!!!!");
             Console.WriteLine("WHOOSH!!!!");
@@ -69,7 +65,7 @@ namespace DragRace
 
             foreach (var car in carList)
             {
-                Console.WriteLine($"{car.GetType().Name} finished with a speed of {car.ShowCurrentSpeed()}");
+                Console.WriteLine($"{car.GetType().Name} finished with a speed of {car.Show_currentSpeed()}");
             }
 
             Console.WriteLine();

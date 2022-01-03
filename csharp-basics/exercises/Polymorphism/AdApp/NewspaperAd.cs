@@ -18,12 +18,12 @@ namespace AdApp
         }
 
         public int Column => _column;
-        public int Cm => _cm;
+        public int Centimeters => _cm;
 
         private new int Cost()
         {
             var fee = base.Cost();
-            return fee += Cm * Column;
+            return fee += Centimeters * Column;
         }
 
         public override string ToString()

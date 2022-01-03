@@ -9,21 +9,21 @@ namespace DragRace
     internal class Mercedes : ICar, IBoostable
 
     {
-    private int currentSpeed = 0;
+    private int _currentSpeed = 0;
 
     public void SpeedUp()
     {
-        currentSpeed+=28;
+        _currentSpeed+=28;
     }
 
     public void SlowDown()
     {
-        currentSpeed-=20;
+        _currentSpeed-=20;
     }
 
-    public string ShowCurrentSpeed()
+    public string Show_currentSpeed()
     {
-        return currentSpeed.ToString();
+        return _currentSpeed.ToString();
     }
 
     public void StartEngine()
@@ -33,7 +33,7 @@ namespace DragRace
 
         public void UseNitrousOxideEngine()
         {
-            currentSpeed+=25;
+            _currentSpeed+=25;
         }
     }
 }

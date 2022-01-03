@@ -8,20 +8,20 @@ namespace DragRace
 {
     internal class Toyota : ICar
     {
-        private int currentSpeed = 0;
+        private int _currentSpeed = 0;
         public void SpeedUp()
         {
-            currentSpeed+=25;
+            _currentSpeed+=25;
         }
 
         public void SlowDown()
         {
-            currentSpeed-=25;
+            _currentSpeed-=25;
         }
 
-        public string ShowCurrentSpeed()
+        public string Show_currentSpeed()
         {
-            return currentSpeed.ToString();
+            return _currentSpeed.ToString();
         }
 
         public void StartEngine()

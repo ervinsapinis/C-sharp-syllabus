@@ -54,78 +54,45 @@ namespace Exercise6
         static void CreateTiger(string input)
         {
             string type = input;
-            Console.WriteLine($"Input your {type}'s name:");
-            string name = Console.ReadLine();
-            Console.WriteLine($"Input your {type}'s weight:");
-            double weight;
-            var isDouble = double.TryParse(Console.ReadLine(), out weight);
-            while (!isDouble)
-            {
-                Console.WriteLine("Error. Please provide valid weight.");
-                isDouble = double.TryParse(Console.ReadLine(), out weight);
-            }
-            Console.WriteLine($"Input your {type}'s region:");
-            string region = Console.ReadLine();
+            string name = NameAnimal(input);
+            double weight = WeighAnimal(input);
+            string region = LocateAnimal(input);
             animalList.Add(new Tiger(name, type, weight, region));
             animalList[animalCounter].MakeSound();
             animalList[animalCounter].Eat(FeedAnimal());
             animalCounter++;
         }
+
         static void CreateMouse(string input)
         {
             string type = input;
-            Console.WriteLine($"Input your {type}'s name:");
-            string name = Console.ReadLine();
-            Console.WriteLine($"Input your {type}'s weight:");
-            double weight;
-            var isDouble = double.TryParse(Console.ReadLine(), out weight);
-            while (!isDouble)
-            {
-                Console.WriteLine("Error. Please provide valid weight.");
-                isDouble = double.TryParse(Console.ReadLine(), out weight);
-            }
-            Console.WriteLine($"Input your {type}'s region:");
-            string region = Console.ReadLine();
+            string name = NameAnimal(input);
+            double weight = WeighAnimal(input);
+            string region = LocateAnimal(input);
             animalList.Add(new Mouse(name, type, weight, region));
             animalList[animalCounter].MakeSound();
             animalList[animalCounter].Eat(FeedAnimal());
             animalCounter++;
         }
+
         static void CreateZebra(string input)
         {
             string type = input;
-            Console.WriteLine($"Input your {type}'s name:");
-            string name = Console.ReadLine();
-            Console.WriteLine($"Input your {type}'s weight:");
-            double weight;
-            var isDouble = double.TryParse(Console.ReadLine(), out weight);
-            while (!isDouble)
-            {
-                Console.WriteLine("Error. Please provide valid weight.");
-                isDouble = double.TryParse(Console.ReadLine(), out weight);
-            }
-            Console.WriteLine($"Input your {type}'s region:");
-            string region = Console.ReadLine();
+            string name = NameAnimal(input);
+            double weight = WeighAnimal(input);
+            string region = LocateAnimal(input);
             animalList.Add(new Zebra(name, type, weight, region));
             animalList[animalCounter].MakeSound();
             animalList[animalCounter].Eat(FeedAnimal());
             animalCounter++;
         }
+
         static void CreateCat(string input)
         {
             string type = input;
-            Console.WriteLine($"Input your {type}'s name:");
-            string name = Console.ReadLine();
-            Console.WriteLine($"Input your {type}'s weight:");
-            double weight;
-            var isDouble = double.TryParse(Console.ReadLine(), out weight);
-            while (!isDouble)
-            {
-                Console.WriteLine("Error. Please provide valid weight.");
-                isDouble = double.TryParse(Console.ReadLine(), out weight);
-            }
-            Console.WriteLine($"Input your {type}'s region:");
-            string region = Console.ReadLine();
+            string name = NameAnimal(input);
+            double weight = WeighAnimal(input);
+            string region = LocateAnimal(input);
             Console.WriteLine($"Input your {type}'s breed:");
             string breed = Console.ReadLine();
             animalList.Add(new Cat(name, type, weight, region, breed));
@@ -140,11 +107,11 @@ namespace Exercise6
             var type = Console.ReadLine();
             Console.WriteLine("Please provide the amount of feed.");
             int amount;
-            var isAmount = int.TryParse(Console.ReadLine(), out amount);
-            while (!isAmount)
+            var isAmountValid = int.TryParse(Console.ReadLine(), out amount);
+            while (!isAmountValid)
             {
                 Console.WriteLine("Error. Please provide valid food types/amounts.");
-                isAmount = int.TryParse(Console.ReadLine(), out amount);
+                isAmountValid = int.TryParse(Console.ReadLine(), out amount);
             }
             while (true)
             {
@@ -157,6 +124,31 @@ namespace Exercise6
                 Console.WriteLine("Please provide the type of food (meat or vegetable) for your pet.");
                 type = Console.ReadLine();
             }
+        }
+
+        static string NameAnimal(string type)
+        {
+            Console.WriteLine($"Input your {type}'s name:");
+            return Console.ReadLine();
+        }
+
+        static string LocateAnimal(string type)
+        {
+            Console.WriteLine($"Input your {type}'s region:");
+            return Console.ReadLine();
+        }
+
+        static double WeighAnimal(string type)
+        {
+            Console.WriteLine($"Input your {type}'s weight:");
+            double weight;
+            var isDouble = double.TryParse(Console.ReadLine(), out weight);
+            while (!isDouble)
+            {
+                Console.WriteLine("Error. Please provide valid weight.");
+                isDouble = double.TryParse(Console.ReadLine(), out weight);
+            }
+            return weight;
         }
     }
 }
