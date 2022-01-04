@@ -33,7 +33,7 @@ namespace FuelConsumptionCalculator
             }
 
             Console.WriteLine("Kilometers per liter are " + car.CalculateConsumption() + " gasHog:" + car.GasHog());
-            Console.WriteLine("Car1 Kilometers per liter are " + car1.CalculateConsumption()+ " economyCar:" + car.EconomyCar());
+            Console.WriteLine("Car1 Kilometers per liter are " + car1.CalculateConsumption()+ " economyCar:" + car1.EconomyCar());
             Console.ReadKey();
         }
     }
