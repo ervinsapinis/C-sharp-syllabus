@@ -2,32 +2,28 @@
 
 namespace Excercise1
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             int result = 15;
             Console.WriteLine("Enter your first integer:");
-            var firstInt = Int32.Parse(Console.ReadLine());
+            var x = Int32.Parse(Console.ReadLine());
             Console.WriteLine("Enter your second integer:");
-            var secondInt = Int32.Parse(Console.ReadLine());
+            var y = Int32.Parse(Console.ReadLine());
         }
 
-        public static bool CheckIfIsFifteen(int firstInt; int secondInt)
+        public static bool CheckIfFifteen(int x, int y)
         {
-            if (firstInt == result |
-            secondInt == result |
-            firstInt - secondInt == result |
-            secondInt - firstInt == result |
-            firstInt + secondInt == result)
-            {
-                Console.WriteLine(true);
-            }
+            int result = 15;
+            if (x == result |
+                y == result |
+                x - y == result |
+                y - x == result |
+                x + y == result)
+                return true;
             else
-            {
-                Console.WriteLine(false);
-            }
-
+                return false;
         }
     }
 }
