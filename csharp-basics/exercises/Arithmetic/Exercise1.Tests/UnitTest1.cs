@@ -20,7 +20,6 @@ namespace Exercise1.Tests
             bool actual = Excercise1.Program.CheckIfFifteen(x, y);
             // Assert
             Assert.Equal(expected, actual);
-
         }
 
         [Theory]
