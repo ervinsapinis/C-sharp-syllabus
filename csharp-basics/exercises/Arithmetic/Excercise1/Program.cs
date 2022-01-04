@@ -11,11 +11,15 @@ namespace Excercise1
             var firstInt = Int32.Parse(Console.ReadLine());
             Console.WriteLine("Enter your second integer:");
             var secondInt = Int32.Parse(Console.ReadLine());
+        }
+
+        public static bool CheckIfIsFifteen(int firstInt; int secondInt)
+        {
             if (firstInt == result |
-                secondInt == result |
-                firstInt - secondInt == result |
-                secondInt - firstInt == result |
-                firstInt + secondInt == result)
+            secondInt == result |
+            firstInt - secondInt == result |
+            secondInt - firstInt == result |
+            firstInt + secondInt == result)
             {
                 Console.WriteLine(true);
             }
@@ -23,6 +27,7 @@ namespace Excercise1
             {
                 Console.WriteLine(false);
             }
+
         }
     }
 }
