@@ -11,15 +11,15 @@ namespace GravityCalculator.Tests
     public class EarthGravityCalculatorTests
     {
         [Fact()]
-        public void Calculate_StandstillObjectFalling10sec_()
+        public void Calculate_StandstillObjectFalling10sec_m490p5()
         {
-            Assert.True(false, "This test needs an implementation");
-        }
-
-        [Fact()]
-        public void ReportResultTest()
-        {
-            Assert.True(false, "This test needs an implementation");
+            // Arrange
+            var expected = "The object's position after 10 seconds is -490.5 m.";
+            var earth = new EarthGravityCalculator(0, 10, 0);
+            // Act
+            var actual = earth.ReportResult();
+            // Assert
+            Assert.Equal(expected, actual);
         }
     }
 }
