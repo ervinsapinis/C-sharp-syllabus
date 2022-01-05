@@ -6,7 +6,6 @@ namespace Excercise1
     {
         static void Main(string[] args)
         {
-            int result = 15;
             Console.WriteLine("Enter your first integer:");
             var x = Int32.Parse(Console.ReadLine());
             Console.WriteLine("Enter your second integer:");
