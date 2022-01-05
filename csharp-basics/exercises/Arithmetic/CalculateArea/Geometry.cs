@@ -10,6 +10,7 @@ namespace CalculateArea
     {
         public static double AreaOfCircle(int radius)
         {
+            if (radius <= 0) throw new ArgumentException();
             double area = Math.PI * radius * radius;
             return Math.Round(area, 2);
         }
