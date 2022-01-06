@@ -18,8 +18,7 @@ namespace CalculateArea
         {
 
             int userChoice;
-            
-
+           
             // Display the menu.
             Console.WriteLine("Geometry Calculator\n");
             Console.WriteLine("1. Calculate the Area of a Circle");

@@ -6,17 +6,10 @@ namespace Excercise2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter your number:");
-            var num = Int32.Parse(Console.ReadLine());
-            if (num % 2 == 0)
-            {
-                Console.WriteLine("Even Number");
-            }
-            else
-            {
-                Console.WriteLine("Odd Number");
-            };
-            Console.WriteLine("Bye!");
+            Console.WriteLine("Enter your integer");
+            var x = int.Parse(Console.ReadLine());
+            Console.WriteLine(CheckOddEven.CheckValue(x));
+            Console.WriteLine(CheckOddEven.ByeMessage());
         }
     }
 }

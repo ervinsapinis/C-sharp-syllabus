@@ -11,29 +11,33 @@ namespace Exercise8
             Console.WriteLine("Please input how many hours you've worked:");
             int hoursWorked = int.Parse(Console.ReadLine());
 
-            TotalPay(basePay, hoursWorked);
+            Console.WriteLine(WageCalculator.TotalPay(basePay, hoursWorked));
             Console.ReadKey();
         }
 
-        public static void TotalPay(double basePay, int hoursWorked)
+    }
+
+    public static class WageCalculator
+    {
+        public static string TotalPay(double basePay, int hoursWorked)
         {
             if (basePay < 8)
             {
-               Console.WriteLine("Error: base pay cannot be less than $8.00 per hour!");
+                return "Error: base pay cannot be less than $8.00 per hour!";
             }
             else if (hoursWorked > 60)
             {
-                Console.WriteLine("Error: employees may not work more than 60h per week!");
+                return "Error: employees may not work more than 60h per week!";
             }
             else if (hoursWorked > 40)
             {
                 double total = (((hoursWorked - 40) * 1.5) + 40) * basePay;
-                Console.WriteLine("Your total pay is: $" + total);
-            } 
+                return "Your total pay is: $" + total;
+            }
             else
             {
-               double total = hoursWorked * basePay;
-               Console.WriteLine("Your total pay is: $" + total);
+                double total = hoursWorked * basePay;
+                return "Your total pay is: $" + total;
             }
         }
     }
