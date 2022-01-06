@@ -39,12 +39,12 @@ namespace Exercise6.Tests
         {
             //Arrange
             int[] expected = { 1, 2, 3, 4, 5, 6, 7, 8, 9, -7, };
-            //Act
             var arr = new int[10];
             MakeArrays.FillArr(arr);
+            //Act
             var actual = MakeArrays.CopyArrAndReplaceLastElement(arr);
             //Assert
-            Assert.Equal(expected[^1], actual[^1]); // vai shis der
+            Assert.Equal(expected[^1], actual[^1]);
         }
     }
 }
