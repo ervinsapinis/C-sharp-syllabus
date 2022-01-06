@@ -44,7 +44,7 @@ namespace Exercise6.Tests
             MakeArrays.FillArr(arr);
             var actual = MakeArrays.CopyArrAndReplaceLastElement(arr);
             //Assert
-            Assert.Equal(expected[^1], actual[^1]);
+            Assert.Equal(expected[^1], actual[^1]); // vai shis der
         }
     }
 }
