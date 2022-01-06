@@ -11,19 +11,13 @@ namespace WordCount
     {
         static void Main(string[] args)
         {
-            string text = System.IO.File.ReadAllText(
-                @"..\..\lear.txt");
-            string[] lines = System.IO.File.ReadAllLines(
-                @"..\..\lear.txt");
-            var wordCount= Regex.Matches(text, @"[A-Za-z]+").Count;
-            Regex rgx = new Regex("[^a-zA-Z0-9 -,]");
-            string cleanCharString = rgx.Replace(text, "");
+            var lear = new WordCount(@"..\..\lear.txt");
 
-            Console.WriteLine(text);
+            Console.WriteLine(lear.FileText());
             Console.WriteLine();
-            Console.WriteLine("Lines = " + lines.Length);
-            Console.WriteLine("Words = " + wordCount);
-            Console.WriteLine("Chars = " + cleanCharString.Length);
+            Console.WriteLine("Lines = " + lear.CountOfLines());
+            Console.WriteLine("Words = " + lear.CountOfWords());
+            Console.WriteLine("Chars = " + lear.CountOfChars());
             Console.ReadKey();
         }
     }
