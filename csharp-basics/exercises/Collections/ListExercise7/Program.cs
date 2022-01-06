@@ -19,7 +19,8 @@ namespace ListExercise7
                 "Black"
             };
 
-            //      TODO: Check if list contains "White" element
+            var isAnyColorWhite = colors.Contains("White");
+            Console.WriteLine(isAnyColorWhite);
         }
     }
 }

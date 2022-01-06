@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,11 +23,41 @@ namespace Exercise1
         {
             string[] array = { "Audi", "BMW", "Honda", "Mercedes", "VolksWagen", "Mercedes", "Tesla" };
 
-            //todo - replace array with an List and print out the results
+            var carList = array.ToList();
+            foreach (var car in carList)
+            {
+                Console.WriteLine(car);
+            }
+            var carHashtable = array.ToHashSet();
+            foreach (var car in carHashtable)
+            {
+                Console.WriteLine(car);
+            }
 
-            //todo - replace array with a HashSet and print out the results
+            var carDictionary = new Dictionary<string, string>();
+            var distinctArr = array.Distinct().ToArray();
+            for (int i = 0; i < distinctArr.Length; i++)
+            {
+                carDictionary.Add(distinctArr[i], CarCountry(distinctArr[i]));
+            }
 
-            //todo - replace array with a Dictionary (use brand as key and origination as value) and print out the results
+            foreach (var car in carDictionary)
+            {
+                Console.WriteLine(car);
+            }
+
+            Console.ReadKey();
+        }
+
+        public static string CarCountry(string car)
+        {
+            string country;
+            if(car == "Tesla")
+                return country = "USA";
+            else if (car == "Honda")
+                return country = "Japan";
+            else
+                return country = "Germany";
         }
     }
 }

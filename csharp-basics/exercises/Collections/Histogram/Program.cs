@@ -9,15 +9,34 @@ namespace Histogram
 {
     class Program
     {
-        private const string Path = "../Histogram/midtermscores.txt";
+        private const string Path = "../../midtermscores.txt";
 
         private static void Main(string[] args)
         {
+            var marks = new List<string>
+                {"00-09: ", "10-19: ", "20-29: ", "30-39: ", "40-49: ", "50-59: ", "60-69: ", "70-79: ", "80-89: ", "90-99: ", "100: "};
             var readText = File.ReadAllLines(Path);
-            foreach (var s in readText)
+            var text = string.Join(" ", readText);
+            var workable = text.Split(' ');
+
+            var gradesList = new List<int>();
+
+            foreach (var s in workable)
             {
-                Console.WriteLine(s);
+                int grade = int.Parse(s);
+                gradesList.Add(grade);
             }
+
+            gradesList.Sort();
+
+            foreach (var grade in gradesList)
+            {
+                var index = grade / 10;
+                marks[index] +="*";
+            }
+
+            marks.ForEach(Console.WriteLine);
+            Console.ReadKey();
         }
     }
 }
