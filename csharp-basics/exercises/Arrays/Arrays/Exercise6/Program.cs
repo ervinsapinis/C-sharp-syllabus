@@ -7,19 +7,38 @@ namespace Exercise6
     {
         static void Main(string[] args)
         {
-            int[] randomArr = new int[10];
-            for (int i = 0; i < randomArr.Length; i++)
-            {
-                Random rnd = new Random();
-                randomArr[i] = rnd.Next(1, 100);
-            }
-
-            int[] randomArrCopy = new int[randomArr.Length];
-            Array.Copy(randomArr, randomArrCopy, randomArr.Length);
-            randomArrCopy[randomArrCopy.Length - 1] = -7;
-
+            var randomArr = MakeArrays.CreateEmptyArrayOf10();
+            MakeArrays.FillArr(randomArr);
+            var randomArrCopy = MakeArrays.CopyArrAndReplaceLastElement(randomArr);
             Console.WriteLine("Array 1: {0}", string.Join(", ", randomArr));
             Console.WriteLine("Array 2: {0}", string.Join(", ", randomArrCopy));
         }
     }
+
+    public static class MakeArrays
+    {
+        public static int[] CreateEmptyArrayOf10()
+        {
+            var arr = new int[10];
+            return arr;
+        }
+
+        public static int[] FillArr(int[] arr)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Random rnd = new Random();
+                arr[i] = rnd.Next(1, 100);
+            }
+            return arr;
+        }
+
+        public static int[] CopyArrAndReplaceLastElement(int[] arr)
+        {
+            int[] arrCopy = new int[arr.Length];
+            arrCopy[arr.Length - 1] = -7;
+            return arrCopy;
+        }
+    }
+      
 }
