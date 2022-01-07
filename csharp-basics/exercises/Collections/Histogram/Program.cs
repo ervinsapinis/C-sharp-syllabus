@@ -9,14 +9,14 @@ namespace Histogram
 {
     class Program
     {
-        private const string Path = "../../midtermscores.txt";
+        private const string _path = "../../midtermscores.txt";
 
         private static void Main(string[] args)
         {
             var marks = new List<string>
                 {"00-09: ", "10-19: ", "20-29: ", "30-39: ", "40-49: ", "50-59: ", "60-69: ", "70-79: ", "80-89: ", "90-99: ", "100: "};
-            var readText = File.ReadAllLines(Path);
-            var text = string.Join(" ", readText);
+            var _readText = File.ReadAllLines(_path);
+            var text = string.Join(" ", _readText);
             var workable = text.Split(' ');
 
             var gradesList = new List<int>();

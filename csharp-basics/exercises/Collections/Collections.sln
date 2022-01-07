@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCount.Tests", "Tests\Wo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{49152D8C-CCAE-45C8-9354-9EC4E4651E40}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightPlannerTests", "FlightPlannerTests\FlightPlannerTests.csproj", "{B448D47E-97FA-4A04-8094-6D379FA15C59}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -133,6 +135,10 @@ Global
 		{88B75199-3C1A-44C8-9466-D9870FC3FF4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88B75199-3C1A-44C8-9466-D9870FC3FF4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88B75199-3C1A-44C8-9466-D9870FC3FF4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B448D47E-97FA-4A04-8094-6D379FA15C59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B448D47E-97FA-4A04-8094-6D379FA15C59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B448D47E-97FA-4A04-8094-6D379FA15C59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B448D47E-97FA-4A04-8094-6D379FA15C59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -150,6 +156,7 @@ Global
 		{A47A516D-BE38-4D49-AD43-30D6B3DE44AA} = {A6127B98-3FA0-4FE2-B8A3-55D9E639B1F6}
 		{88737D25-5F14-427D-AAC9-910094585997} = {A6127B98-3FA0-4FE2-B8A3-55D9E639B1F6}
 		{88B75199-3C1A-44C8-9466-D9870FC3FF4C} = {49152D8C-CCAE-45C8-9354-9EC4E4651E40}
+		{B448D47E-97FA-4A04-8094-6D379FA15C59} = {49152D8C-CCAE-45C8-9354-9EC4E4651E40}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FBF206CD-7EC6-4C70-8BBF-033721538F35}
