@@ -8,7 +8,7 @@ Tallin -> Riga
 Tallin -> Berlin
 Malta -> Riga
 Malta -> Warsaw
-Zurich-> Berlin
+Zurich -> Berlin
 Warsaw -> Riga
 Warsaw -> Malta
 Warsaw -> Zurich

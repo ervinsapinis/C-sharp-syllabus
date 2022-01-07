@@ -20,8 +20,8 @@ namespace FlightPlanner.Tests
             //Arrange
             var expected = new Dictionary<string, List<string>>()
             {
+                { "Berlin", new List<string> { "Warsaw", "Tallin" } },
                 { "Riga", new List<string> { "Tallin", "Berlin", "Warsaw", "Malta" } },
-                { "Berlin", new List<string> { "Tallin", "Warsaw" } },
                 { "Tallin", new List<string> { "Riga", "Berlin" } },
                 { "Malta", new List<string> { "Riga", "Warsaw" } },
                 { "Zurich", new List<string> { "Berlin" } },
@@ -50,7 +50,7 @@ namespace FlightPlanner.Tests
         public void CityChoice_Berlin_ShouldReturnWarsawAndTallin()
         {
             //Arrange
-            var expected = "--) Warsaw\n--) Tallin";
+            var expected = "--) Warsaw\n--) Tallin\nChoose and input your next destination:";
             _target.FlightDictionary = _target.FillDictionary();
             //Act
             var actual = _target.CityChoice("Berlin");
@@ -71,12 +71,13 @@ namespace FlightPlanner.Tests
         }
 
         [Fact()]
-        public void PrintCities__targetFlightDictionary_ShouldReturnStringOfAllKeys()
+        public void PrintCities_TargetFlightDictionary_ShouldReturnStringOfAllKeys()
         {
             //Arrange
-            var expected = "Berlin\nRiga\nTallin\nMalta\nZurich\nWarsaw";
+            var expected = "Berlin\nRiga\nTallin\nMalta\nZurich\nWarsaw\n";
             _target.FillDictionary();
             //Act
+            _target.FlightDictionary = _target.FillDictionary();
             var actual = _target.PrintCities();
             //Assert
             Assert.Equal(expected, actual);
