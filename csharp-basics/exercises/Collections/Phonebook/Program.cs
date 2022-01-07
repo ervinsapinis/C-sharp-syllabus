@@ -18,6 +18,15 @@ namespace Phonebook
             mydiDirectory.AddEntry("Ahmed Attalay", "764-867-4956");
             mydiDirectory.AddEntry("Phil Biggs", "906-346-4956");
             mydiDirectory.AddEntry("Ann Damsel", "667-234-4956");
+            mydiDirectory.AddEntry("peter", "123456789");
+
+            Console.WriteLine("Search:");
+            var input = Console.ReadLine();
+            Console.WriteLine(mydiDirectory.FindName(input));
+            Console.WriteLine("Search:");
+            var input2 = Console.ReadLine();
+            Console.WriteLine(mydiDirectory.FindNumber(input2));
+            Console.ReadKey();
 
         }
     }

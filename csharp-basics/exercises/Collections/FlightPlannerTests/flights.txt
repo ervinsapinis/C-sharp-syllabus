@@ -1,0 +1,14 @@
+Berlin -> Warsaw
+Berlin -> Tallin
+Riga -> Tallin
+Riga -> Berlin
+Riga -> Warsaw
+Riga -> Malta
+Tallin -> Riga
+Tallin -> Berlin
+Malta -> Riga
+Malta -> Warsaw
+Zurich -> Berlin
+Warsaw -> Riga
+Warsaw -> Malta
+Warsaw -> Zurich
