@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Account
 {
-    class Account
+    public class Account
     {
         private string _name;
         private double _money;
@@ -14,26 +14,27 @@ namespace Account
             _money = v2;
         }
 
-        public double Withdrawal(double i)
+        public string Withdrawal(double i)
         {
             if (i < Money)
             {
                 Money -= i;
-                Console.WriteLine($"A withdrawal of {i} from {Name} is made.");
-                return i;
+                return $"A withdrawal of {i} from {Name} is made.";
             }
             else
             {
-                 Console.WriteLine("Not enough money to make a withdrawal!");
-                 return 0;
+                return "Not enough money to make a withdrawal!";
             }
-
         }
 
-        public void Deposit(double i)
+        public string Deposit(double i)
         {
-            Money += i;
-            Console.WriteLine($"A deposit of {i} from {Name} is made.");
+            if (i > 0)
+            {
+                Money += i;
+                return $"A deposit of {i} to {Name} is made.";
+            }
+            return "Can't make a deposit with a negative value.";
         }
 
         public double Balance()
@@ -46,6 +47,17 @@ namespace Account
             return $"{_name}: {_money}";
         }
 
+        public string Transfer(Account toAccount, double amount)
+        {
+            if (Money > amount)
+            {
+                Money -= amount;
+                toAccount.Money += amount;
+                return $"{amount}$ successfully transferred from {Name} to {toAccount.Name}";
+            } 
+            return "Not enough money to make this transfer.";
+        }
+
         public string Name
         {
             get => _name;
@@ -56,7 +68,6 @@ namespace Account
         {
              get => _money;
              set => _money = value;
-            
         }
     }
 }
