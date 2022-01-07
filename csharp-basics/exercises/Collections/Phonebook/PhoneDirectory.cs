@@ -7,26 +7,31 @@ namespace PhoneBook
 {
     public class PhoneDirectory
     {
-        public SortedDictionary<string, string> PhoneEntryDictionary = new SortedDictionary<string, string>();
+        public SortedDictionary<string, string> PhoneEntryDictionary;
 
-        public string Find(string number)
+        public PhoneDirectory()
+        {
+            PhoneEntryDictionary = new SortedDictionary<string, string>();
+        }
+
+        public string FindNumber(string number)
         {
             for (int i = 0; i < PhoneEntryDictionary.Count; i++)
             {
                 if (PhoneEntryDictionary.ContainsValue(number))
                 {
-                    var index = PhoneEntryDictionary[number];
+                    var index = PhoneEntryDictionary.FirstOrDefault(val => val.Value == number).Key;
                     return $"The number {number} is under the name {index}";
                 }
             }
             return "No such number was found in the Phonebook";
         }
 
-        public string GetNumber(string name)
+        public string FindName(string name)
         {
             for (int i = 0; i < PhoneEntryDictionary.Count; i++)
             {
-                if (PhoneEntryDictionary.ContainsValue(name))
+                if (PhoneEntryDictionary.ContainsKey(name))
                 {
                     var index = PhoneEntryDictionary[name];
                     return $"The name {name} is under the Phonebook entry {index}";

@@ -11,7 +11,7 @@ namespace FlightPlanner.Tests
 {
     public class FlightPlannerTests
     {
-        FlightPlanner target = new FlightPlanner(@"..\..\flights.txt");
+        FlightPlanner _target = new FlightPlanner(@"..\..\flights.txt");
 
 
         [Fact()]
@@ -28,8 +28,8 @@ namespace FlightPlanner.Tests
                 { "Warsaw", new List<string> { "Riga", "Malta", "Zurich" } },
             };
             //Act
-            var actual = target.FlightDictionary;
-            actual = target.FillDictionary();
+            var actual = _target.FlightDictionary;
+            actual = _target.FillDictionary();
             //Assert
             Assert.Equal(expected, actual);
         }
@@ -40,8 +40,8 @@ namespace FlightPlanner.Tests
             //Arrange
             var expected = new List<string> { "Vilnius" };
             //Act
-            var actual = target.travelList;
-            target.AddCityToTravelList("Vilnius");
+            var actual = _target.travelList;
+            _target.AddCityToTravelList("Vilnius");
             //Assert
             Assert.Equal(expected, actual);
         }
@@ -51,9 +51,9 @@ namespace FlightPlanner.Tests
         {
             //Arrange
             var expected = "--) Warsaw\n--) Tallin";
-            target.FlightDictionary = target.FillDictionary();
+            _target.FlightDictionary = _target.FillDictionary();
             //Act
-            var actual = target.CityChoice("Berlin");
+            var actual = _target.CityChoice("Berlin");
             //Assert
             Assert.Equal(expected, actual);
         }
@@ -65,19 +65,19 @@ namespace FlightPlanner.Tests
             var testList = new List<string> { "Berlin", "Tallin", "Berlin" };
             var expected = "Thanks for using the flight planner. Here is your route:\nBerlin -> Tallin -> Berlin";
             //Act
-            var actual = target.Route(testList);
+            var actual = _target.Route(testList);
             //Assert
             Assert.Equal(expected, actual);
         }
 
         [Fact()]
-        public void PrintCities_TargetFlightDictionary_ShouldReturnStringOfAllKeys()
+        public void PrintCities__targetFlightDictionary_ShouldReturnStringOfAllKeys()
         {
             //Arrange
             var expected = "Berlin\nRiga\nTallin\nMalta\nZurich\nWarsaw";
-            target.FillDictionary();
+            _target.FillDictionary();
             //Act
-            var actual = target.PrintCities();
+            var actual = _target.PrintCities();
             //Assert
             Assert.Equal(expected, actual);
         }
@@ -88,7 +88,7 @@ namespace FlightPlanner.Tests
             //Arrange
             var expected = "What would you like to do: \n To display list of the cities press 1 \n To exit program press #";
             //Act
-            var actual = target.ShowMenu();
+            var actual = _target.ShowMenu();
             //Assert
             Assert.Equal(expected, actual);
         }
@@ -99,7 +99,7 @@ namespace FlightPlanner.Tests
             //Arrange
             var expected = "Fly safe. Goodbye!";
             //Act
-            var actual = target.CloseApp();
+            var actual = _target.CloseApp();
             //Assert
             Assert.Equal(expected, actual);
         }
@@ -108,9 +108,9 @@ namespace FlightPlanner.Tests
         public void CloseApp_IsAppRunningShouldBeFalse()
         {
             //Act
-            target.CloseApp();
+            _target.CloseApp();
             //Assert
-            Assert.True(!target.IsAppRunning);
+            Assert.True(!_target.IsAppRunning);
         }
     }
 }
