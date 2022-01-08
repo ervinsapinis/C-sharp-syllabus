@@ -26,9 +26,9 @@ namespace DragRace
             _currentSpeed+=50;
         }
 
-        public void StartEngine() 
+        public string StartEngine()
         {
-            Console.WriteLine("Rrrrrrr.....");
+            return "Rrrrrrr.....";
         }
     }
 }

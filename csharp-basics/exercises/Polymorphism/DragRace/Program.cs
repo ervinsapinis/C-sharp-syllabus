@@ -43,7 +43,7 @@ namespace DragRace
                 foreach (var car in carList)
                 {
                     if (i == 1)
-                        car.StartEngine();
+                        Console.WriteLine(car.StartEngine());
                     else if (i % 3 == 0)
                         if (car is IBoostable)
                             ((IBoostable) car).UseNitrousOxideEngine();

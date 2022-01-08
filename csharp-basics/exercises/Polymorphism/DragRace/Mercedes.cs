@@ -6,34 +6,33 @@ using System.Threading.Tasks;
 
 namespace DragRace
 {
-    internal class Mercedes : ICar, IBoostable
-
+    public class Mercedes : ICar, IBoostable
     {
-    private int _currentSpeed = 0;
+        private int _currentSpeed = 0;
 
-    public void SpeedUp()
-    {
-        _currentSpeed+=28;
-    }
-
-    public void SlowDown()
-    {
-        _currentSpeed-=20;
-    }
-
-    public string Show_currentSpeed()
-    {
-        return _currentSpeed.ToString();
-    }
-
-    public void StartEngine()
-    {
-        Console.WriteLine("eeeeee BRRBRBRBRBRBRBRBR...");
-    }
-
-        public void UseNitrousOxideEngine()
+        public void SpeedUp()
         {
-            _currentSpeed+=25;
+            _currentSpeed+=28;
         }
+
+        public void SlowDown()
+        {
+            _currentSpeed-=20;
+        }
+
+        public string Show_currentSpeed()
+        {
+            return _currentSpeed.ToString();
+        }
+
+        public string StartEngine()
+        {
+           return "eeeeee BRRBRBRBRBRBRBRBR...";
+        }
+
+            public void UseNitrousOxideEngine()
+            {
+                _currentSpeed+=25;
+            }
     }
 }

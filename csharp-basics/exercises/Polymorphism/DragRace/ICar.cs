@@ -5,6 +5,6 @@ namespace DragRace
         void SpeedUp();
         void SlowDown();
         string Show_currentSpeed();
-        void StartEngine();
+        string StartEngine();
     }
 }
