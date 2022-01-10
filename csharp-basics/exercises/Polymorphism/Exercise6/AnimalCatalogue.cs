@@ -19,13 +19,13 @@ namespace Exercise6
             while (true)
             {
                 AppMessages.PrintAnimalChoices(this);
-                var userInput = Read();
+                var userInput = Console.ReadLine();
                 if (userInput.ToLower() == "end")
                     break;
                 while (!ValidAnimalInput(userInput))
                 {
                     AppMessages.InvalidInput();
-                    userInput = Read();
+                    userInput = Console.ReadLine();
                 }
 
                 switch (userInput.ToLower())
@@ -87,7 +87,9 @@ namespace Exercise6
         {
             var result = string.Empty;
             foreach (var animal in animalList)
+            {
                 result += $"{animal.Type}[{animal.Name}, {animal.Weight}, {animal.LivingRegion}, {animal.FoodEaten}]\n";
+            }
             return result;
         }
 

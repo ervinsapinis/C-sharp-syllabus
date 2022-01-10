@@ -6,28 +6,28 @@ using System.Threading.Tasks;
 
 namespace Exercise6
 {
-    public class AnimalLabeler : UserInput
+    public class AnimalLabeler
     {
         public string NameAnimal(string type)
         {
             AppMessages.RequestName(type);
-            return Read();
+            return Console.ReadLine();
         }
 
         public string LocateAnimal(string type)
         {
             AppMessages.RequestLocation(type);
-            return Read();
+            return Console.ReadLine();
         }
 
         public double WeighAnimal(string type)
         {
             AppMessages.RequestWeight(type);
-            var isDouble = double.TryParse(Read(), out var weight);
+            var isDouble = double.TryParse(Console.ReadLine(), out var weight);
             while (!isDouble)
             {
                 AppMessages.InvalidWeight();
-                isDouble = double.TryParse(Read(), out weight);
+                isDouble = double.TryParse(Console.ReadLine(), out weight);
             }
             return weight;
         }
@@ -35,7 +35,7 @@ namespace Exercise6
         public string IdentifyAnimalBreed(string input)
         {
             AppMessages.RequestBreed(input);
-            return Read();
+            return Console.ReadLine();
         }
     }
 }

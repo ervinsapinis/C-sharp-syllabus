@@ -8,20 +8,11 @@ using System.Threading.Tasks;
 
 namespace Exercise6.Tests
 {
-    public class CatTests : UserInput
+    public class CatTests
     {
-        private string[] _output = new string[] {"meat", "3", "asd", "5", "vegetable"};
-        private int _index = 0;
-        public override string Read()
-        {
-            return _output[_index++];
-        }
-
-        private Cat _target = new Cat("Muris", "Kakis", 3.5, "Lauki", "Latgales resnais");
-        private AnimalFeeder _targetFeeder = new AnimalFeeder();
-
+        private Cat _target = new("Muris", "Kakis", 5.6, "Majas", "Rizhiks");
         [Fact()]
-        public void MakeSound_ShouldReturnSound()
+        public void MakeSound_ShouldReturnMeow()
         {
             //Arrange
             var expected = "Meow.";
@@ -32,23 +23,26 @@ namespace Exercise6.Tests
         }
 
         [Fact()]
-        public void FeedAnimal_ValidFoodAndAmount_ShouldAddToFoodCounter()
+        public void Eat_ValidInputVeg_ShouldIncrementFoodEaten()
         {
             //Arrange
             var expected = 3;
-            _target.Eat(_targetFeeder.FeedAnimal());
+            var grain = new Vegetable(3);
+            _target.Eat(grain);
             //Act
-             var actual = _target.FoodEaten;
+            var actual = _target.FoodEaten;
             //Assert
             Assert.Equal(expected, actual);
+
         }
 
         [Fact()]
-        public void FeedAnimal_InvalidFoodThenValidAmountAndFood_ShouldAddToFoodCounter()
+        public void Eat_ValidInputMeat_ShouldIncrementFoodEaten()
         {
             //Arrange
             var expected = 5;
-            _target.Eat(_targetFeeder.FeedAnimal());
+            var gooseEgg = new Meat(5);
+            _target.Eat(gooseEgg);
             //Act
             var actual = _target.FoodEaten;
             //Assert

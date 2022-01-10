@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace Exercise6
 {
-    public class AnimalFeeder : UserInput
+    public class AnimalFeeder
     {
         public Food FeedAnimal()
         {
             AppMessages.InputFoodType();
-            var type = Read();
+            var type = Console.ReadLine();
             AppMessages.InputFoodAmount();
             int amount;
-            var isAmountValid = int.TryParse(Read(), out amount);
+            var isAmountValid = int.TryParse(Console.ReadLine(), out amount);
             while (!isAmountValid)
             {
                 AppMessages.FoodError();
-                isAmountValid = int.TryParse(Read(), out amount);
+                isAmountValid = int.TryParse(Console.ReadLine(), out amount);
             }
             while (true)
             {
@@ -29,7 +29,7 @@ namespace Exercise6
 
                 AppMessages.FoodError();
                 AppMessages.InputFoodType();
-                type = Read();
+                type = Console.ReadLine();
             }
         }
     }

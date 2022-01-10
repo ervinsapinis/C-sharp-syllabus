@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Exercise6
 {
-    internal class Zebra : Mammal
+    public class Zebra : Mammal
     {
         public Zebra(string name, string type, double weight, string livingRegion)
             : base(name, type, weight, livingRegion)

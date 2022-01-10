@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.VisualBasic.CompilerServices;
 
 namespace Exercise6
 {
-    public class AnimalGenerator : AnimalLabeler
+    public class AnimalGenerator
 
     {
         public Mammal CreateAnimal(string type, string name, double weight, string region)
@@ -21,12 +22,11 @@ namespace Exercise6
                     throw new ArgumentException();
             }
         }
-        public Mammal CreateCat(string type, string name, double weight, string region, string breed)
+        public Cat CreateCat(string type, string name, double weight, string region, string breed)
         {
             if (type.ToLower() != "cat")
                 throw new ArgumentException();
             return new Cat(name, type, weight, region, breed);
         }
-
     }
 }
