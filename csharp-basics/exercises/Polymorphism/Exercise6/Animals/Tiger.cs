@@ -6,27 +6,28 @@ using System.Threading.Tasks;
 
 namespace Exercise6
 {
-    internal class Zebra : Mammal
+    public class Tiger : Feline
     {
-        public Zebra(string name, string type, double weight, string livingRegion)
+
+        public Tiger(string name, string type, double weight, string livingRegion)
             : base(name, type, weight, livingRegion)
         {
         }
-        public override void MakeSound()
+
+        public override string MakeSound()
         {
-            Console.WriteLine("~~~~confused zebra noises~~~");
+            return "ROAAR!!!";
         }
 
         public override void Eat(Food food)
         {
-            if (food is Vegetable)
+            if (food is Meat)
                 FoodEaten += food.Quantity;
             else
             {
-                Console.WriteLine("This animal can't eat that.");
+                AppMessages.InvalidFoodGiven();
                 FoodEaten = 0;
             }
         }
-
     }
 }

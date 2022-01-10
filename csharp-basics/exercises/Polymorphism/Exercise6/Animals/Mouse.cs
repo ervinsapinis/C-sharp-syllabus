@@ -6,25 +6,24 @@ using System.Threading.Tasks;
 
 namespace Exercise6
 {
-    public class Tiger : Feline
+    public class Mouse : Mammal
     {
-
-        public Tiger(string name, string type, double weight, string livingRegion)
+        public Mouse(string name, string type, double weight, string livingRegion)
             : base(name, type, weight, livingRegion)
         {
         }
-
-        public override void MakeSound()
+        public override string MakeSound()
         {
-            Console.WriteLine("ROAAR!!!"); }
+            return "squuek squeek!";
+        }
 
         public override void Eat(Food food)
         {
-            if (food is Meat)
+            if (food is Vegetable)
                 FoodEaten += food.Quantity;
             else
             {
-                Console.WriteLine("This animal can't eat that.");
+                AppMessages.InvalidFoodGiven();
                 FoodEaten = 0;
             }
         }

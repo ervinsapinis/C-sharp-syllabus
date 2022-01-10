@@ -8,22 +8,17 @@ namespace Exercise6
 {
     public class Cat : Feline
     {
-        private string _breed;
         public Cat(string name, string type, double weight, string livingRegion, string breed)
             : base(name, type, weight, livingRegion)
         {
-            _breed = breed;
+            Breed = breed;
         }
 
-        public string Breed
-        {
-            get { return _breed; }
-            set { _breed = value; }
-        }
+        public string Breed { get; set; }
 
-        public override void MakeSound()
+        public override string MakeSound()
         {
-            Console.WriteLine("Meow.");
+            return "Meow.";
         }
 
         public override void Eat(Food food)
