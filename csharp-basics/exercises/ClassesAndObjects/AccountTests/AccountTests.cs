@@ -48,7 +48,7 @@ namespace Account.Tests
         }
 
         [Fact()]
-        public void Withdrawal_InValidAmount_ShouldReturnError()
+        public void Withdrawal_InvalidAmount_ShouldReturnError()
         {
             //Arrange
             var expected = "Not enough money to make a withdrawal!";
@@ -59,7 +59,7 @@ namespace Account.Tests
         }
 
         [Fact()]
-        public void Withdrawal_inValidAmount_ShouldNotReduceAmount()
+        public void Withdrawal_InvalidAmount_ShouldNotReduceAmount()
         {
             //Arrange
             var expected = 1000;

@@ -18,7 +18,7 @@ namespace Account
         {
             if (i < Money)
             {
-                Money -= i;
+                _money -= i;
                 return $"A withdrawal of {i} from {Name} is made.";
             }
             else
@@ -31,7 +31,7 @@ namespace Account
         {
             if (i > 0)
             {
-                Money += i;
+                _money += i;
                 return $"A deposit of {i} to {Name} is made.";
             }
             return "Can't make a deposit with a negative value.";
@@ -49,9 +49,9 @@ namespace Account
 
         public string Transfer(Account toAccount, double amount)
         {
-            if (Money > amount)
+            if (_money > amount)
             {
-                Money -= amount;
+                _money -= amount;
                 toAccount.Money += amount;
                 return $"{amount}$ successfully transferred from {Name} to {toAccount.Name}";
             } 
