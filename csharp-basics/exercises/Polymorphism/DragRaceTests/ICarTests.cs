@@ -24,12 +24,12 @@ namespace DragRace.Tests
         }
 
         [Fact()]
-        public void Show_currentSpeed_AtStart_ShouldReturn0()
+        public void ShowCurrentSpeed_AtStart_ShouldReturn0()
         {
             //Arrange
             var expected = "0";
             //Act
-            var actual = _target.Show_currentSpeed();
+            var actual = _target.ShowCurrentSpeed();
             //Assert
             Assert.Equal(expected, actual);
         }
@@ -39,7 +39,7 @@ namespace DragRace.Tests
         [InlineData(2, "30")]
         [InlineData(4, "60")]
         [InlineData(10, "150")]
-        public void Show_currentSpeed_AfterSpeedUpYTimes_ShouldReturn15xY(int times, string expected)
+        public void ShowCurrentSpeed_AfterSpeedUpYTimes_ShouldReturn15xY(int times, string expected)
         {
             //Arrange
             var actual = string.Empty;
@@ -49,13 +49,13 @@ namespace DragRace.Tests
             }
 
             //Act
-            actual = _target.Show_currentSpeed();
+            actual = _target.ShowCurrentSpeed();
             //Assert
             Assert.Equal(expected, actual);
         }
 
         [Fact()]
-        public void Show_currentSpeed_AfterSpedUp2TimesAndSlowedDownOnce_ShouldReturn15()
+        public void ShowCurrentSpeed_AfterSpedUp2TimesAndSlowedDownOnce_ShouldReturn15()
         {
             //Arrange
             var expected = "15";
@@ -63,7 +63,7 @@ namespace DragRace.Tests
             _target.SpeedUp();
             _target.SlowDown();
             //Act
-            var actual = _target.Show_currentSpeed();
+            var actual = _target.ShowCurrentSpeed();
             //Assert
             Assert.Equal(expected, actual);
         }

@@ -17,7 +17,6 @@ namespace Exercise6.Tests
         {
             //Arrange
             var input = "cat";
-            //Act
             //Assert
             Assert.True(_target.ValidAnimalInput(input));
         }
@@ -27,7 +26,6 @@ namespace Exercise6.Tests
         {
             //Arrange
             var input = "dog";
-            //Act
             //Assert
             Assert.False(_target.ValidAnimalInput(input));
         }
@@ -36,7 +34,7 @@ namespace Exercise6.Tests
         public void ShowAnimalChoices_ShouldReturnStringOfAnimals()
         {
             //Arrange
-            var expected= "cat\ntiger\nzebra\nmouse\n";
+            var expected = "cat\ntiger\nzebra\nmouse\n";
             //Act
             var actual = _target.ShowAnimalChoices();
             //Assert
@@ -52,7 +50,6 @@ namespace Exercise6.Tests
             var grain = new Vegetable(3);
             testFace.Eat(grain);
             _target.animalList.Add(testFace);
-
             //Act
             var actual = _target.ShowAnimalInfo();
             //Assert

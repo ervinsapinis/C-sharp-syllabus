@@ -53,10 +53,10 @@ namespace DragRace
 
             for (int i = 0; i < carList.Count; i++)
             {
-                results.Add(int.Parse(carList[i].Show_currentSpeed()));
+                results.Add(int.Parse(carList[i].ShowCurrentSpeed()));
             }
 
-            var winner = carList.Find(car => results.Max() == int.Parse(car.Show_currentSpeed()));
+            var winner = carList.Find(car => results.Max() == int.Parse(car.ShowCurrentSpeed()));
 
             Console.WriteLine("ZOOOOM!!!!");
             Console.WriteLine("WHOOSH!!!!");
@@ -65,7 +65,7 @@ namespace DragRace
 
             foreach (var car in carList)
             {
-                Console.WriteLine($"{car.GetType().Name} finished with a speed of {car.Show_currentSpeed()}");
+                Console.WriteLine($"{car.GetType().Name} finished with a speed of {car.ShowCurrentSpeed()}");
             }
 
             Console.WriteLine();

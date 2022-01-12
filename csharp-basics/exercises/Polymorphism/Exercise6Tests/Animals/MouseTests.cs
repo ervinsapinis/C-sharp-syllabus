@@ -21,7 +21,6 @@ namespace Exercise6.Tests
             var actual = _target.MakeSound();
             //Assert
             Assert.Equal(expected, actual);
-
         }
 
         [Fact()]
@@ -35,7 +34,6 @@ namespace Exercise6.Tests
             var actual = _target.FoodEaten;
             //Assert
             Assert.Equal(expected, actual);
-
         }
 
         [Fact()]

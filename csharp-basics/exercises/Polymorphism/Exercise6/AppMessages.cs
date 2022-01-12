@@ -74,8 +74,5 @@ namespace Exercise6
         {
             Console.WriteLine(inputAnimal.MakeSound());
         }
-
-
-
     }
 }

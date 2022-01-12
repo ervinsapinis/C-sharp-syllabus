@@ -19,7 +19,7 @@ namespace DragRace
             _currentSpeed-=25;
         }
 
-        public string Show_currentSpeed()
+        public string ShowCurrentSpeed()
         {
             return _currentSpeed.ToString();
         }

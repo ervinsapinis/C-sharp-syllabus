@@ -11,6 +11,7 @@ namespace Exercise6.Tests
     public class CatTests
     {
         private Cat _target = new("Muris", "Kakis", 5.6, "Majas", "Rizhiks");
+
         [Fact()]
         public void MakeSound_ShouldReturnMeow()
         {
@@ -33,7 +34,6 @@ namespace Exercise6.Tests
             var actual = _target.FoodEaten;
             //Assert
             Assert.Equal(expected, actual);
-
         }
 
         [Fact()]
