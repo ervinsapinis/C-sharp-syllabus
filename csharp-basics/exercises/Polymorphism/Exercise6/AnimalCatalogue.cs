@@ -88,6 +88,10 @@ namespace Exercise6
             var result = string.Empty;
             foreach (var animal in animalList)
             {
+                if (animal is Cat cat)
+                {
+                    result += $"{animal.Type}[{animal.Name}, {animal.Weight}, {animal.LivingRegion}, {animal.FoodEaten}, {cat.Breed}]\n";
+                }
                 result += $"{animal.Type}[{animal.Name}, {animal.Weight}, {animal.LivingRegion}, {animal.FoodEaten}]\n";
             }
             return result;
