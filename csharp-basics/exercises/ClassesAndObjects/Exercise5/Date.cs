@@ -7,7 +7,7 @@ using Console = System.Console;
 
 namespace Exercise5
 {
-    internal class Date
+    public class Date
     {
         //fields
         private int _year;
@@ -31,9 +31,9 @@ namespace Exercise5
         { get { return _year; } }
 
         //methods
-        public void DisplayDate()
+        public string DisplayDate()
         {
-            Console.WriteLine($"{Day}/{Month}/{Year}");
+            return $"{Day}/{Month}/{Year}";
         }
     }
 }

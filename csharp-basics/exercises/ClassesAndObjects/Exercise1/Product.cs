@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Exercise1
 {
-    internal class Product
+    public class Product
     {
         //fields
         private string _name;
@@ -22,19 +22,31 @@ namespace Exercise1
         }
 
         //methods
-        public void PrintProduct()
+        public string PrintProduct()
         {
-            Console.WriteLine($"{_name}, price: {_priceAtStart} EUR, amount: {_amountAtStart} units");
+            return $"{_name}, price: {_priceAtStart} EUR, amount: {_amountAtStart} units";
         }
 
-        public void ChangeQuantity(int amount)
+        public int ChangeQuantity(int amount)
         {
-            this._amountAtStart = amount;
+            if (amount < 0)
+                throw new ArgumentOutOfRangeException();
+            else
+            {
+                this._amountAtStart = amount;
+                return amount;
+            }
         }
 
-        public void ChangePrice(double amount)
+        public double ChangePrice(double amount)
         {
-            this._priceAtStart = amount;
+            if (amount <= 0)
+                throw new ArgumentOutOfRangeException();
+            else
+            {
+                this._priceAtStart = amount;
+                return amount;
+            }
         }
     }
 }

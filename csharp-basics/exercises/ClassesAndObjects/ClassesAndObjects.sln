@@ -21,15 +21,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise1", "Exercise1\Exer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise3", "Exercise3\Exercise3.csproj", "{1198AC5E-2844-4C36-8E75-A01681CD5223}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise4", "Exercise4\Exercise4.csproj", "{BDD2D554-D61B-43C7-B054-B05F456556BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise4", "Exercise4\Exercise4.csproj", "{BDD2D554-D61B-43C7-B054-B05F456556BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise5", "Exercise5\Exercise5.csproj", "{3126A760-F670-4C65-911F-4627A0070831}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise5", "Exercise5\Exercise5.csproj", "{3126A760-F670-4C65-911F-4627A0070831}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise7", "Exercise7\Exercise7.csproj", "{066A6018-A0F6-48F2-A6DF-7C54E2612D21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise7", "Exercise7\Exercise7.csproj", "{066A6018-A0F6-48F2-A6DF-7C54E2612D21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise8", "Exercise8\Exercise8.csproj", "{BEF6DD2F-6436-4F49-8760-E898668B0CA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise8", "Exercise8\Exercise8.csproj", "{BEF6DD2F-6436-4F49-8760-E898668B0CA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise9", "Exercise9\Exercise9.csproj", "{21E65AD1-F42E-4318-BC45-F3CDCCA1E841}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise9", "Exercise9\Exercise9.csproj", "{21E65AD1-F42E-4318-BC45-F3CDCCA1E841}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise1Tests", "Exercise1Tests\Exercise1Tests.csproj", "{842926F0-A44A-4A40-9C9F-5C2342B559DA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8001F20F-19E4-497A-9126-146C2BAD1BDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise5Tests", "Exercise5Tests\Exercise5Tests.csproj", "{F258B10E-2C68-4D8B-93BA-D0AF02D0844D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountTests", "AccountTests\AccountTests.csproj", "{892A46FE-22DA-4D4A-9810-9F0461216295}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,9 +101,26 @@ Global
 		{21E65AD1-F42E-4318-BC45-F3CDCCA1E841}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21E65AD1-F42E-4318-BC45-F3CDCCA1E841}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21E65AD1-F42E-4318-BC45-F3CDCCA1E841}.Release|Any CPU.Build.0 = Release|Any CPU
+		{842926F0-A44A-4A40-9C9F-5C2342B559DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{842926F0-A44A-4A40-9C9F-5C2342B559DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{842926F0-A44A-4A40-9C9F-5C2342B559DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{842926F0-A44A-4A40-9C9F-5C2342B559DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F258B10E-2C68-4D8B-93BA-D0AF02D0844D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F258B10E-2C68-4D8B-93BA-D0AF02D0844D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F258B10E-2C68-4D8B-93BA-D0AF02D0844D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F258B10E-2C68-4D8B-93BA-D0AF02D0844D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{892A46FE-22DA-4D4A-9810-9F0461216295}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{892A46FE-22DA-4D4A-9810-9F0461216295}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{892A46FE-22DA-4D4A-9810-9F0461216295}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{892A46FE-22DA-4D4A-9810-9F0461216295}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{842926F0-A44A-4A40-9C9F-5C2342B559DA} = {8001F20F-19E4-497A-9126-146C2BAD1BDF}
+		{F258B10E-2C68-4D8B-93BA-D0AF02D0844D} = {8001F20F-19E4-497A-9126-146C2BAD1BDF}
+		{892A46FE-22DA-4D4A-9810-9F0461216295} = {8001F20F-19E4-497A-9126-146C2BAD1BDF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {57C5E787-AAEA-41CC-BD12-4A66023D0568}

@@ -15,7 +15,7 @@ namespace Account
             Console.WriteLine("Initial state");
             Console.WriteLine(bartosAccount);
 
-            bartosAccount.Withdrawal(20);
+            Console.WriteLine(bartosAccount.Withdrawal(20));
             Console.WriteLine("Barto's account balance is now: " + bartosAccount.Balance());
 
             Console.WriteLine("Final state");
@@ -29,8 +29,8 @@ namespace Account
             Console.WriteLine(myAccount);
             Console.WriteLine();
 
-            mattsAccount.Withdrawal(100);
-            myAccount.Deposit(100);
+            Console.WriteLine(mattsAccount.Withdrawal(100));
+            Console.WriteLine(myAccount.Deposit(100));
             Console.WriteLine("Final state");
             Console.WriteLine(mattsAccount);
             Console.WriteLine(myAccount);
@@ -45,21 +45,14 @@ namespace Account
             Console.WriteLine(aAccount);
             Console.WriteLine(bAccount);
             Console.WriteLine(cAccount);
-            Transfer(aAccount, bAccount, 50);
-            Transfer(aAccount, cAccount, 25);
+            Console.WriteLine(aAccount.Transfer(bAccount, 50));
+            Console.WriteLine(aAccount.Transfer(cAccount, 25));
             Console.WriteLine();
             Console.WriteLine("Final state");
             Console.WriteLine(aAccount);
             Console.WriteLine(bAccount);
             Console.WriteLine(cAccount);
             Console.ReadKey();
-        }
-
-        private static void Transfer(Account from, Account to, double howMuch)
-        {
-            from.Withdrawal(howMuch);
-            to.Deposit(howMuch);
-            Console.WriteLine($"{howMuch}$ successfully transferred from {from.Name} to {to.Name}");
         }
     }
 }
