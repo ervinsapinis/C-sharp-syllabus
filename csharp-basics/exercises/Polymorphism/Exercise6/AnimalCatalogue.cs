@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace Exercise6
 {
+    enum AnimalEnums
+    {
+        Cat,
+        Tiger,
+        Zebra,
+        Mouse
+    };
     public class AnimalCatalogue : AnimalLabeler
     {
+
         public string[] AnimalChoices { get; } = { "cat", "tiger", "zebra", "mouse" };
         public AnimalGenerator deus = new AnimalGenerator();
         public List<Mammal> animalList = new();
@@ -28,23 +36,32 @@ namespace Exercise6
                     userInput = Console.ReadLine();
                 }
 
-                switch (userInput.ToLower())
+                switch (ValidInput(userInput))
                 {
-                    case "tiger":
-                    case "zebra":
-                    case "mouse":
+                    case nameof(AnimalEnums.Tiger):
+                    case nameof(AnimalEnums.Zebra):
+                    case nameof(AnimalEnums.Mouse):
                         CatalogueAnimal(userInput.ToLower());
                         break;
-                    case "cat":
+                    case nameof(AnimalEnums.Cat):
                         CatalogueAnimal(userInput.ToLower());
                         break;
                 }
             }
         }
 
+        private string ValidInput(string input)
+        {
+            input = input.ToLower();
+            var firstLetter = char.ToUpper(input[0]).ToString();
+            string result = firstLetter;
+            result += input.Substring(1);
+            return result;
+        }
+
         public void CatalogueAnimal(string input)
         {
-            if (input == "tiger" | input == "zebra" | input == "mouse")
+            if (input == AnimalEnums.Tiger.ToString() | input == AnimalEnums.Zebra.ToString()| input == AnimalEnums.Mouse.ToString())
             {
                 var type = input;
                 var name = NameAnimal(input);
@@ -91,8 +108,10 @@ namespace Exercise6
                 if (animal is Cat cat)
                 {
                     result += $"{animal.Type}[{animal.Name}, {animal.Weight}, {animal.LivingRegion}, {animal.FoodEaten}, {cat.Breed}]\n";
+                    
                 }
-                result += $"{animal.Type}[{animal.Name}, {animal.Weight}, {animal.LivingRegion}, {animal.FoodEaten}]\n";
+                else
+                    result += $"{animal.Type}[{animal.Name}, {animal.Weight}, {animal.LivingRegion}, {animal.FoodEaten}]\n";
             }
             return result;
         }
