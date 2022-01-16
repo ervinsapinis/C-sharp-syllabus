@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace Exercise6
 {
-    internal class Mouse : Mammal
+    public class Mouse : Mammal
     {
-        public Mouse(string name, string type, double weight, string livingRegion)
+        public Mouse(string name, AnimalEnums type, double weight, string livingRegion)
             : base(name, type, weight, livingRegion)
         {
         }
-        public override void MakeSound()
+        public override string MakeSound()
         {
-            Console.WriteLine("squuek squeek!");
+            return "squuek squeek!";
         }
 
         public override void Eat(Food food)
@@ -23,10 +23,9 @@ namespace Exercise6
                 FoodEaten += food.Quantity;
             else
             {
-                Console.WriteLine("This animal can't eat that.");
+                AppMessages.InvalidFoodGiven();
                 FoodEaten = 0;
             }
         }
-
     }
 }

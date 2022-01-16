@@ -17,14 +17,14 @@ namespace DragRace
         _currentSpeed-=35;
     }
 
-    public string Show_currentSpeed()
+    public string ShowCurrentSpeed()
     {
         return _currentSpeed.ToString();
     }
 
-    public void StartEngine()
+    public string StartEngine()
     {
-        Console.WriteLine("-- silence ---");
+        return "-- silence ---";
     }
     }
 }

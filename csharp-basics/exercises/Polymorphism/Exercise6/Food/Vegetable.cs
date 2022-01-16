@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace Exercise6
 {
-    internal class Meat : Food
+    public class Vegetable : Food
     {
-        public Meat(int quantity) : base(quantity)
-        {
-        }
     }
 }

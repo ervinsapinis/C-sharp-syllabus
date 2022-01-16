@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DragRace
 {
-    internal class Toyota : ICar
+    public class Toyota : ICar
     {
         private int _currentSpeed = 0;
         public void SpeedUp()
@@ -19,14 +19,14 @@ namespace DragRace
             _currentSpeed-=25;
         }
 
-        public string Show_currentSpeed()
+        public string ShowCurrentSpeed()
         {
             return _currentSpeed.ToString();
         }
 
-        public void StartEngine()
+        public string StartEngine()
         {
-            Console.WriteLine("krrrr-wroooom.");
+            return "krrrr-wroooom.";
         }
     }
 }
