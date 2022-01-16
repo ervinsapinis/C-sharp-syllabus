@@ -8,24 +8,22 @@ namespace Exercise6
     public class AnimalGenerator
 
     {
-        public Mammal CreateAnimal(string type, string name, double weight, string region)
+        public Mammal CreateAnimal(AnimalEnums type, string name, double weight, string region)
         {
-            switch (type.ToLower())
+            switch (type)
             {
-                case "tiger":
+                case AnimalEnums.Tiger:
                     return new Tiger(name, type, weight, region);
-                case "mouse":
+                case AnimalEnums.Mouse:
                     return new Mouse(name, type, weight, region);
-                case "zebra":
+                case AnimalEnums.Zebra:
                     return new Zebra(name, type, weight, region);
                 default:
                     throw new ArgumentException();
             }
         }
-        public Cat CreateCat(string type, string name, double weight, string region, string breed)
+        public Cat CreateCat(AnimalEnums type, string name, double weight, string region, string breed)
         {
-            if (type.ToLower() != "cat")
-                throw new ArgumentException();
             return new Cat(name, type, weight, region, breed);
         }
     }

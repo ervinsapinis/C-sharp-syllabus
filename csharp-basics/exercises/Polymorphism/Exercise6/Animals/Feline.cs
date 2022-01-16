@@ -8,7 +8,7 @@ namespace Exercise6
 {
     public abstract class Feline : Mammal
     {
-        public Feline(string name, string type, double weight, string livingRegion)
+        public Feline(string name, AnimalEnums type, double weight, string livingRegion)
             : base(name, type, weight, livingRegion)
         {
         }

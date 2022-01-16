@@ -8,8 +8,7 @@ namespace Exercise6
 {
     public class Tiger : Feline
     {
-
-        public Tiger(string name, string type, double weight, string livingRegion)
+        public Tiger(string name, AnimalEnums type, double weight, string livingRegion)
             : base(name, type, weight, livingRegion)
         {
         }

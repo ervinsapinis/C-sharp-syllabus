@@ -8,21 +8,21 @@ namespace Exercise6
 {
     public class AnimalLabeler
     {
-        public string NameAnimal(string type)
+        public string NameAnimal(AnimalEnums type)
         {
-            AppMessages.RequestName(type);
+            AppMessages.RequestName(type.ToString());
             return Console.ReadLine();
         }
 
-        public string LocateAnimal(string type)
+        public string LocateAnimal(AnimalEnums type)
         {
-            AppMessages.RequestLocation(type);
+            AppMessages.RequestLocation(type.ToString());
             return Console.ReadLine();
         }
 
-        public double WeighAnimal(string type)
+        public double WeighAnimal(AnimalEnums type)
         {
-            AppMessages.RequestWeight(type);
+            AppMessages.RequestWeight(type.ToString());
             var isDouble = double.TryParse(Console.ReadLine(), out var weight);
             while (!isDouble)
             {
@@ -32,9 +32,9 @@ namespace Exercise6
             return weight;
         }
 
-        public string IdentifyAnimalBreed(string input)
+        public string IdentifyAnimalBreed(AnimalEnums input)
         {
-            AppMessages.RequestBreed(input);
+            AppMessages.RequestBreed(input.ToString());
             return Console.ReadLine();
         }
     }

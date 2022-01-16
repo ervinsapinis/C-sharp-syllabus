@@ -8,19 +8,16 @@ namespace Exercise6
 {
     public abstract class Animal
     {
-        public Animal(string name, string type, double weight)
+        public Animal(string name, AnimalEnums type, double weight)
         {
             Name = name;
             Type = type;
             Weight = weight;
         }
 
-        public string Name { get; set; }
-
-        public string Type { get; set; }
-
-        public double Weight { get; set; }
-
+        public string Name { get; } 
+        public AnimalEnums Type { get; }
+        public double Weight { get;  }
         public int FoodEaten { get; set; }
 
         public virtual string MakeSound()

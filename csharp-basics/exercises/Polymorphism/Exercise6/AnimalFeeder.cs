@@ -23,9 +23,15 @@ namespace Exercise6
             while (true)
             {
                 if (type.ToLower() == "vegetable")
-                    return new Vegetable(amount);
+                    return new Vegetable()
+                    {
+                        Quantity = amount
+                    };
                 if (type.ToLower() == "meat")
-                    return new Meat(amount);
+                    return new Meat()
+                    {
+                        Quantity = amount
+                    };
 
                 AppMessages.FoodError();
                 AppMessages.InputFoodType();

@@ -8,7 +8,7 @@ namespace Exercise6
 {
     public class Cat : Feline
     {
-        public Cat(string name, string type, double weight, string livingRegion, string breed)
+        public Cat(string name, AnimalEnums type, double weight, string livingRegion, string breed)
             : base(name, type, weight, livingRegion)
         {
             Breed = breed;
@@ -25,6 +25,5 @@ namespace Exercise6
         {
             FoodEaten += food.Quantity;
         }
-
     }
 }

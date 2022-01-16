@@ -6,17 +6,16 @@ using System.Threading.Tasks;
 
 namespace Exercise6
 {
-    enum AnimalEnums
+    public enum AnimalEnums
     {
         Cat,
         Tiger,
         Zebra,
         Mouse
     };
+    
     public class AnimalCatalogue : AnimalLabeler
     {
-
-        public string[] AnimalChoices { get; } = { "cat", "tiger", "zebra", "mouse" };
         public AnimalGenerator deus = new AnimalGenerator();
         public List<Mammal> animalList = new();
         public int animalCounter;
@@ -30,72 +29,53 @@ namespace Exercise6
                 var userInput = Console.ReadLine();
                 if (userInput.ToLower() == "end")
                     break;
-                while (!ValidAnimalInput(userInput))
+                var isValid = Enum.TryParse(userInput, true, out AnimalEnums userInputEnum);
+                while (!isValid)
                 {
                     AppMessages.InvalidInput();
                     userInput = Console.ReadLine();
+                    break;
                 }
 
-                switch (ValidInput(userInput))
+                switch (userInputEnum)
                 {
-                    case nameof(AnimalEnums.Tiger):
-                    case nameof(AnimalEnums.Zebra):
-                    case nameof(AnimalEnums.Mouse):
-                        CatalogueAnimal(userInput.ToLower());
+                    case AnimalEnums.Tiger:
+                    case AnimalEnums.Mouse:
+                    case AnimalEnums.Zebra:
+                        CatalogueAnimal(userInputEnum);
                         break;
-                    case nameof(AnimalEnums.Cat):
-                        CatalogueAnimal(userInput.ToLower());
+                    case AnimalEnums.Cat:
+                        CatalogueAnimal(userInputEnum);
                         break;
                 }
             }
         }
 
-        private string ValidInput(string input)
+        public void CatalogueAnimal(AnimalEnums input)
         {
-            input = input.ToLower();
-            var firstLetter = char.ToUpper(input[0]).ToString();
-            string result = firstLetter;
-            result += input.Substring(1);
-            return result;
-        }
-
-        public void CatalogueAnimal(string input)
-        {
-            if (input == AnimalEnums.Tiger.ToString() | input == AnimalEnums.Zebra.ToString()| input == AnimalEnums.Mouse.ToString())
+            var name = NameAnimal(input);
+            var weight = WeighAnimal(input);
+            var region = LocateAnimal(input);
+            if (input == AnimalEnums.Tiger | input == AnimalEnums.Zebra| input == AnimalEnums.Mouse)
             {
-                var type = input;
-                var name = NameAnimal(input);
-                var weight = WeighAnimal(input);
-                var region = LocateAnimal(input);
-                animalList.Add(deus.CreateAnimal(type, name, weight, region));
+                animalList.Add(deus.CreateAnimal(input, name, weight, region));
             }
             else
             {
-                var type = input;
-                var name = NameAnimal(input);
-                var weight = WeighAnimal(input);
-                var region = LocateAnimal(input);
                 var breed = IdentifyAnimalBreed(input);
-                animalList.Add(deus.CreateCat(type, name, weight, region, breed));
+                animalList.Add(deus.CreateCat(input, name, weight, region, breed));
             }
 
             AppMessages.PrintAnimalSound(animalList[animalCounter]);
             animalList[animalCounter].Eat(feeder.FeedAnimal());
             animalCounter++;
-
-
-        }
-        public bool ValidAnimalInput(string input)
-        {
-            if (AnimalChoices.Contains(input))
-                return true;
-            return false;
         }
 
         public string ShowAnimalChoices()
         {
+            var values = Enum.GetValues(typeof(AnimalEnums));
             var output = string.Empty;
-            foreach (var choice in AnimalChoices)
+            foreach (var choice in values)
                 output += $"{choice}\n";
             return output;
         }
@@ -105,16 +85,11 @@ namespace Exercise6
             var result = string.Empty;
             foreach (var animal in animalList)
             {
+                result += $"{animal.Type}[{animal.Name}, {animal.Weight}, {animal.LivingRegion}, {animal.FoodEaten}";
                 if (animal is Cat cat)
-                {
-                    result += $"{animal.Type}[{animal.Name}, {animal.Weight}, {animal.LivingRegion}, {animal.FoodEaten}, {cat.Breed}]\n";
-                    
-                }
-                else
-                    result += $"{animal.Type}[{animal.Name}, {animal.Weight}, {animal.LivingRegion}, {animal.FoodEaten}]\n";
+                    result += $", {cat.Breed}";
             }
-            return result;
+            return result + "]\n";
         }
-
     }
 }

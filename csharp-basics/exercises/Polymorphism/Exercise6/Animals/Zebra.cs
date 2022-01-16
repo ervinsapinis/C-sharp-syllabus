@@ -8,10 +8,11 @@ namespace Exercise6
 {
     public class Zebra : Mammal
     {
-        public Zebra(string name, string type, double weight, string livingRegion)
+        public Zebra(string name, AnimalEnums type, double weight, string livingRegion)
             : base(name, type, weight, livingRegion)
         {
         }
+
         public override string MakeSound()
         {
             return "~~~~confused zebra noises~~~";
